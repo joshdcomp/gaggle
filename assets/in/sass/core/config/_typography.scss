@@ -1,0 +1,25 @@
+// Shoelace Fonts
+$_montserrat: (
+    'font-family': #{'Montserrat', sans-serif},
+    'font-weight': (
+        'normal': 400,
+        'semi-bold': 500,
+        'bold': 700,
+    ),
+);
+
+$_openSans: (
+    'font-family' : #{'Open Sans', sans-serif},
+    'font-weight': (
+        'light': 300,
+        'normal': 400,
+        'semi-bold': 600,
+    ),
+);
+
+$t-header-ff: _get($_gibson, 'font-family');
+$t-header-fw: _get($_gibson, 'font-weight', 'bold');
+
+$t-text-ff: _get($_aktiv, 'font-family');
+$t-text-fw: _get($_aktiv, 'font-weight', 'regular');
+$t-text-bold-fw: _get($_aktiv, 'font-weight', 'bold');

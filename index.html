@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+        <!-- <script src="js/main.js"></script> -->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script type="text/javascript">
+        var animals = {
+            "albatross" : ["rookery"],
+            "antelopes" : ["herd", "cluster", "herd"],
+            "ants" : ["nest", "army", "colony", "state", "swarm", "bike" ],
+            "apes" : ["shrewdness", "troop"],
+            "asses" : ["pace", "drove", "herd", "coffle"],
+            "auks" : ["colony", "flock", "raft"],
+            "baboons" : ["troop", "flange"],
+            "badgers" : ["cete", "colony", "set", "company"],
+            "bats" : ["colony", "cloud"],
+            "bears" : ["sloth", "sleuth", "slought"],
+            "beavers" : ["family", "lodge", "colony"],
+            "bees" : ["swarm", "cluster", "nest", "hive", "erst", "bike", "cast", "college", "drift", "game", "fry", "peck", "rabble", "stand", "range", "butt", "spindle", "grist"],
+            "birds" : ["battery", "cast", "congregation", "covert", "covey", "drift", "flight", "fleet", "flock", "flush", "nest", "aviary"],
+            "bison" : ["herd"],
+            "bitterns" : ["flock", "sedge", "siege"],
+            "bloodhounds" : ["sute"],
+            "boars" : ["sounder", "singular", "herd"],
+            "buffaloes" : ["troop", "herd", "gang", "obstinacy"],
+            "bullfinches" : ["bellowing"],
+            "bullocks" : ["drove"],
+            "butterflies" : ["rabble", "flight"],
+            "camels" : ["flock", "train", "caravan", "herd"],
+            "caribou" : ["herd"],
+            "caterpillars" : ["army", "nest"],
+            "cats" : ["clowder", "clutter", "cluster", "colony", "glorying", "kindle", "litter", "dout", "parliament", "seraglio", "glaring", "destruction (wild cats)"],
+            "cattle" : ["drove", "herd", "bow", "bunch", "draft", "drift", "flote", "head", "diary"],
+            "chicken" : ["brood", "clutch", "hatching", "nest", "parcel", "peep", "battery", "flock"],
+            "chinchilla" : ["colony"],
+            "clams" : ["bed"],
+            "cockroaches" : ["intrusion"],
+            "cod" : ["lap"],
+            "colts" : ["rake", "rage"],
+            "cormorants" : ["colony", "flight"],
+            "cows" : ["dairy", "drove", "pack", "team"],
+            "crabs": ["cast"],
+            "cranes" : ["flock", "herd", "sedge", "siege", "sege"],
+            "crocodiles" : ["bask", "nest"],
+            "crows" : ["murder", "parcel", "hover"],
+            "deer" : ["herd", "leash", "bevy", "game", "quarry", "bunch", "mob"],
+            "dogs" : ["gang", "legion", "kennel", "pack", "stud"],
+            "dolphins" : ["team", "school"],
+            "doves" : ["duet", "dule", "dole", "flight", "troop", "pitying (of turtle doves)"],
+            "ducks" : ["bunch", "brood", "knob", "raft", "skein", "string", "mob", "paddling", "plump", "sord", "sore", "team", "waddling"],
+            "eagles" : ["aerie", "brood", "convocation", "cargo"],
+            "eels" : ["swarm", "bed", "bind", "draft", "fry", "wisp"],
+            "elephants" : ["herd", "flock", "parade"],
+            "elks" : ["gang", "herd"],
+            "ferrets" : ["business"],
+            "finches" : ["chirm", "charm"],
+            "fish" : ["school", "shoal", "haul", "draught", "run", "catch", "cran", "flote", "flutter", "cast", "throw", "warp"],
+            "flies" : ["business", "hatch", "grist", "swarm", "community",    "fare", "rabble", "cloud"],
+            "flamingoes" : ["stand"],
+            "foxes" : ["cloud", "skulk", "brace", "leash", "troop", "earth"],
+            "frogs" : ["army", "colony", "froggery"],
+            "geese" : ["gaggle", "clutch", "flock", "line", "skein", "nide", "wedge"],
+            "giraffes" : ["herd", "corps", "troop", "tower"],
+            "gnats" : ["swarm", "cloud", "horde", "plague", "rabble"],
+            "goats" : ["flock", "trip", "herd", "tribe"],
+            "goldfish" : ["troubling"],
+            "gorillas" : ["band"],
+            "grasshoppers" : ["cloud"],
+            "hares" : ["down", "flick", "huske", "kindle", "tripp", "drove",    "warren", "dun"],
+            "hawks" : ["aerie", "brood", "cast", "leash", "mews", "staff"],
+            "hedgehogs" : ["nest", "array"],
+            "hens" : ["battery", "brood", "parcel", "roost", "mews", "concatenation"],
+            "hippopotami" : ["bloat", "school", "pod", "herd"],
+            "hornets" : ["nest", "bike", "swarm"],
+            "horses" : ["haras", "stud", "herd", "string", "field", "set", "team", "stable", "mews", "mob", "parcel", "rag", "slate"],
+            "insects" : ["horde", "nest", "swarm", "rabble", "plague"],
+            "jackrabbits" : ["husk"],
+            "jellyfish" : ["smuck", "fluther", "smack", "stuck", "smuth", "brood"],
+            "kangaroos" : ["troop", "mob", "herd"],
+            "larks" : ["bevy", "exaltation", "flight", "wisp"],
+            "leopards" : ["leap"],
+            "lice" : ["flock"],
+            "lions" : ["pride", "troop", "flock", "sawt", "souse"],
+            "locusts" : ["swarm", "cloud", "plague"],
+            "magpies" : ["tiding", "tittering"],
+            "mallard" : ["flush", "lute", "puddling", "sord", "sute"],
+            "mice" : ["nest", "colony", "harvest"],
+            "midges" : ["bite"],
+            "minnows" : ["shoal", "steam", "swarm"],
+            "moles" : ["company", "labour", "citadel (of mole burrows)"],
+            "monkeys" : ["troop", "cartload", "tribe"],
+            "moose" : ["herd"],
+            "mosquitoes" : ["scourge"],
+            "mules" : ["barren", "span", "mulada", "rake"],
+            "nightingales" : ["watch", "flock", "route"],
+            "otters" : ["bevy", "lodge", "family"],
+            "owls" : ["parliament", "stare"],
+            "oxen" : ["team", "yoke", "drove", "herd"],
+            "oysters" : ["bed", "cast", "clam", "hive", "set"],
+            "parrots" : ["company", "flock", "pandemonium"],
+            "peacocks" : ["pride", "muster", "ostentation"],
+            "pekingese" : ["pomp"],
+            "penguins" : ["parcel", "rookery"],
+            "pigeons" : ["flight", "flock", "loft"],
+            "pigs" : ["drove", "fare", "litter", "flock", "hoggery", "sounder",    "nest of trotters"],
+            "porpoises" : ["school", "crowd", "herd", "shoal", "gam", "pod", "turmoil"],
+            "quail" : ["bevy", "covey", "jug"],
+            "rabbits" : ["bevy", "bury (of conies)", "flick", "kindle", "nest", "game", "warren", "colony"],
+            "racoons" : ["nursery"],
+            "ravens" : ["unkindness"],
+            "reindeer" : ["herd"],
+            "rhinoceros" : ["crash", "stubbornness", "herd"],
+            "rooks" : ["building", "clamour", "congregation", "council",    "pack", "shoal", "wing"],
+            "salmon" : ["run", "bind"],
+            "sardines" : ["family"],
+            "scorpions" : ["bed", "nest"],
+            "seals" : ["pod", "herd", "trip", "rookery", "flock", "plump",    "harem"],
+            "sharks": ["school", "shoal"],
+            "sheep" : ["flock", "hirsel", "drove", "trip", "drift", "fold",    "hurtle", "parcel", "mob", "down", "pack"],
+            "snails" : ["escargatoire", "rout", "walk"],
+            "snakes" : ["bed", "knot", "den", "pit"],
+            "spiders" : ["cluster", "clutter"],
+            "squirrels" : ["drey", "colony"],
+            "starlings" : ["cloud", "chattering", "murmuration", "clattering"],
+            "stoats" : ["pack", "trip"],
+            "storks" : ["flight", "mustering", "phalanx"],
+            "swallows" : ["flight", "gulp", "rush"],
+            "swans" : ["flock", "bevy", "bank", "eyrar", "drift", "game", "herd", "sownder", "team", "wedge"],
+            "swine" : ["sounder", "drift", "herd", "trip", "drone", "singular (of boars)"],
+            "tigers" : ["ambush"],
+            "toads" : ["knot", "nest", "knob"],
+            "trout" : ["hover", "leash", "troup"],
+            "turkeys" : ["duet", "crop", "posse", "rafter", "gang"],
+            "turtles" : ["bale", "dole", "turn", "dule"],
+            "vipers" : ["nest"],
+            "vultures" : ["carpets", "cast", "drove", "flock", "herd"],
+            "walruses" : ["pod", "herd", "huddle"],
+            "wasps" : ["nest", "knot", "knab", "bike", "swarm"],
+            "weasels" : ["pack"],
+            "whales" : ["school", "gam", "mob", "pod", "herd", "plump", "run", "flote", "shoal"],
+            "wildfowl" : ["lute", "plump", "scry", "skein", "sord", "trip"],
+            "wolves" : ["rout", "route", "pack", "head", "horde"],
+            "woodpeckers" : ["descent"],
+            "worms" : ["bed", "clew", "bunch", "clat"],
+            "zebras" : ["herd", "zeal", "cohorts"]
+        };
+
+        var nouns = {};
+
+        for (var a in animals) {
+            var current = animals[a];
+
+            for (var i = 0; i < current.length; i++) {
+                var n = current[i];
+
+                if ( !nouns.hasOwnProperty(n) ) {
+                    nouns[n] = [a];
+                }
+                else if ( nouns[n].indexOf(a) < 0 ) {
+                    nouns[n].push(a);
+                }
+            }
+
+            if ( animals.hasOwnProperty(a) ) {}
+        }
+
+        $(function() {
+            $('.factoid').html(JSON.stringify(nouns))
+        });
+        </script>
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">Collective Nouns</h1>
+                <nav>
+                    <ul>
+                        <li><a href="http://joshdcompton.com">Josh</a></li>
+                        <li><a href="https://twitter.com/joshdcomp">:D</a></li>
+                        <li><a href="https://github.com/joshdcomp">Compton</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <article>
+                    <header>
+                        <h1>Did you know&hellip;</h1>
+                    </header>
+                    <section class="factoid">
+                        <p class="factoid--fact animal">A group of <span class="animal--name"></span> is called a <span class="animal--collective"></span>?</p>
+                        <a href="#_" class="btn btn-primary btn-lg factoid--button factoid-button-do_get_next">Next!</a>
+                    </section>
+                </article>
+
+
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+            </footer>
+        </div>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

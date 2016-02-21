@@ -1,0 +1,40 @@
+/**
+ * Set global flags for any indices
+ */
+$_IS_IE: false;
+$_IS_PRINT: false;
+
+$d-general-spacing: 20px;
+$c-attck-yellow: rgb(253, 204, 6);
+
+$c-text:      rgb(0,0,0);
+$c-primary:   $c-attck-yellow;
+$c-secondary: rgb(150, 150, 150);
+
+//always have normal
+$_gibson: (
+    'font-family': #{'canada-type-gibson', sans-serif},
+    'font-weight': (
+        'normal'   : 400,
+        'light'    : 300,
+        'regular'  : 400,
+        'semibold' : 600,
+        'bold'     : 700,
+    ),
+);
+
+//always have normal
+$_aktiv: (
+    'font-family': #{'aktiv-grotesk', sans-serif},
+    'font-weight': (
+        'normal'   : 400,
+        'hairline' : 200,
+        'light'    : 300,
+        'regular'  : 400,
+        'medium'   : 500,
+        'bold'     : 700,
+    ),
+);
+
+
+@import "importer";
