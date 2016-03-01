@@ -1,2 +1,2 @@
-# gaggle
-The front end repo behind gaggle, the collective nouns generator
+* npm install
+* npm run watch
