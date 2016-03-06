@@ -1,0 +1,11 @@
+// Global styles across all screen sizes, usually stuff like colors and typography
+#{$s-nav} {
+  &--li {
+    display: inline-block;
+    text-align: center;
+  }
+
+  &--link {
+    padding: 4px 15px;
+  }
+}

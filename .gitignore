@@ -1,3 +1,5 @@
+.idea
+
 # Logs
 logs
 *.log
@@ -35,3 +37,7 @@ node_modules
 
 # Sass-related files
 *.sass-cache
+
+# Compiled assets
+assets/out/
+

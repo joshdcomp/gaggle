@@ -1,5 +1,9 @@
-//This always goes first, these are global styles/resets and such
-@import "_GLOBALS/index";
-
 // Always import the *index* for a file. These are imported in chronological
 // order, the order shouldn't matter, but just in case it does, don't reorder
+
+//This always goes first, these are global styles/resets and such
+@import "_GLOBALS/index";
+@import "header/index";
+@import "nav/index";
+@import "footer/index";
+@import "view-container/index";

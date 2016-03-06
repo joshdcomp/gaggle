@@ -5,36 +5,16 @@ $_IS_IE: false;
 $_IS_PRINT: false;
 
 $d-general-spacing: 20px;
-$c-attck-yellow: rgb(253, 204, 6);
-
-$c-text:      rgb(0,0,0);
-$c-primary:   $c-attck-yellow;
-$c-secondary: rgb(150, 150, 150);
-
-//always have normal
-$_gibson: (
-    'font-family': #{'canada-type-gibson', sans-serif},
-    'font-weight': (
-        'normal'   : 400,
-        'light'    : 300,
-        'regular'  : 400,
-        'semibold' : 600,
-        'bold'     : 700,
-    ),
+$d-global_container-width: (
+  'small': 100%,
+  'medium': 100%,
+  'large': 1024px
 );
 
-//always have normal
-$_aktiv: (
-    'font-family': #{'aktiv-grotesk', sans-serif},
-    'font-weight': (
-        'normal'   : 400,
-        'hairline' : 200,
-        'light'    : 300,
-        'regular'  : 400,
-        'medium'   : 500,
-        'bold'     : 700,
-    ),
-);
-
+$c-pine:  rgb(53, 105, 51);
+$c-hay:   rgb(204, 165, 44);
+$c-pond:  rgb(98, 190, 202);
+$c-fall:  rgb(211, 134, 60);
+$c-cloud: rgb(236, 234, 231);
 
 @import "importer";

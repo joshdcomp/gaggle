@@ -1,0 +1,25 @@
+// Global styles across all screen sizes, usually stuff like colors and typography
+#{$s-header} {
+  &:before,
+  &:after {
+    display: table;
+    width: 100%;
+    clear: both;
+  }
+
+  &--container {
+    width: _get($d-global_container-width, 'large');
+    margin: auto;
+  }
+
+  &--logo {
+    clear: left;
+    display: inline-block;
+    padding: 25px 15px;
+
+  }
+  &--nav {
+    float: right;
+    padding: 25px 0;
+  }
+}

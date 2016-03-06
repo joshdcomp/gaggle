@@ -1,27 +1,24 @@
-@include meyer-reset();
+@include meyer-reset;
 
 *{
     box-sizing: border-box;
 }
 
 html,
-body {
+body{
     font-family: $t-text-ff;
     font-weight: $t-text-fw;
     height: 100%;
+    //background-color: $c-body-bg;
     background-color: $c-body-bg;
-    font-size: $t-font-size;
+    font-size: 16px;
     //set smartquotes for the rest of the stylesheet
     quotes: "“" "”" "‘" "’";
 }
 
-img {
-    width: 100%;
-}
 
-a {
-    color: $c-attck-yellow;
-    text-decoration: none;
+img{
+    width: 100%;
 }
 
 ::selection {

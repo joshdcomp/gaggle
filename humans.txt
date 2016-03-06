@@ -3,13 +3,15 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Josh Compton -- ui designer, webapp dev -- @joshdcomp
+    Matt Bush    -- iOS app developer       -- @mtthwbsh
+    Gabe Cooper  -- illustrator             -- @gabeorlacooper
 
 # THANKS
 
-    <name>
+    # friends who contributed illustration
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    jQuery, Modernizr
+    HTML5, CSS3, SASS, shoelace
+    modernizr, react, browserify
