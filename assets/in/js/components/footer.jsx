@@ -1,17 +1,44 @@
+/**
+ * REACT!!
+ */
 var React = require('react');
 
-// Components
+/**
+ * Compontents
+ */
 var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
 var IndexLink = ReactRouter.IndexLink;
 
-//Footer
-module.exports = React.createClass({
-    render: function() {
-        return (
-            <footer className='footer'>
-                Footer
-            </footer>
-        )
+/**
+ * Modules
+ */
+
+
+/**
+ * The Module Actual
+ */
+var Footer = React.createClass({
+  displayName: 'Footer',
+  getInitialState: function() {
+    return {
     }
+  },
+  componentDidMount: function() {
+  },
+
+  render: function() {
+    var classes = [
+      'footer',
+      (this.props.className)
+    ];
+    return (
+      <footer
+        className={classes.join(' ')}
+      >
+        <p className="footer--legal">Copyright (c) 2015 Josh Compton. All Rights Reserved.</p>
+      </footer>
+    )
+  }
 });
+module.exports = Footer;

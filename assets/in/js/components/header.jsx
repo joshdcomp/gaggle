@@ -1,11 +1,25 @@
+/**
+* REACT!!
+*/
 var React = require('react');
 
-// Components
+/**
+* Compontents
+*/
 var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
 var IndexLink = ReactRouter.IndexLink;
 
-module.exports = React.createClass({
+/**
+* Modules
+*/
+var Nav = require('./nav.jsx');
+
+/**
+* The Module Actual
+*/
+var Header = React.createClass({
+  displayName: 'Header',
   getInitialState: function() {
     return {
     }
@@ -15,17 +29,23 @@ module.exports = React.createClass({
 
   render: function() {
     var classes = [
-      'header',
-      this.headerState(),
+      'header'
     ];
     return (
       <header
         className={classes.join(' ')}
       >
-        <div className="logo">
+        <div className="header--container">
+          <div className="header--logo">
             logo
+          </div>
+
+          <Nav
+            className="header--nav"
+            />
         </div>
       </header>
     )
   }
 });
+module.exports = Header;
