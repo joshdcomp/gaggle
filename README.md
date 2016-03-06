@@ -1,2 +1,32 @@
-* npm install
-* npm run watch
+# Gaggle
+An informative resource for discovering and looking up collective nouns
+
+## Hello world
+Gaggle's hello world is (hopefully) very simple. Basic system dependencies are:
+- Node/npm
+- SASS
+- Grunt CLI
+
+After you have those set up, just do:
+
+`$npm install`
+
+`$grunt`
+
+Pass a `--watch` parameter (looks like: `$grunt --watch`) to continuously compile files as you change your files.
+
+## Grunt
+Grunt has several tasks set up if you don't want to re-compile everything at once:
+
+- `$grunt css`: compiles sass to css using `assets/in/sass/index.scss` as its entry point. Pass `--watch` to continuously compile *only* your css as you change sass files.
+- `$grunt svg`: compiles all svg files in `assets/in/svg` into an svg sprite in `assets/out/svg`. Pass `--watch` to continuously compile *only* your svg files.
+- `$grunt js`: transpiles your react code and its dependencies into one browser-readable ES5 bundle using `assets/in/js/index.jsx` as its entry poing. Pass `--watch` to continuously compile *only* your js files.
+
+## JS
+The application functionality runs off of ReactJS using a Flux architecture. [More here](https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture).
+
+## Sass
+The Sass files are a port of [Shoelace](https://github.com/joshdcomp/shoelace). The docs have more up-to-date information than I could give here.
+
+## SVGs
+The SVGs compile into an SVG sprite so they can be used via [this technique](https://css-tricks.com/svg-sprites-use-better-icon-fonts/).
