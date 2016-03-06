@@ -5,6 +5,11 @@ $_IS_IE: false;
 $_IS_PRINT: false;
 
 $d-general-spacing: 20px;
+$d-global_container-width: (
+  'small': 100%,
+  'medium': 100%,
+  'large': 1024px
+);
 
 $c-pine:  rgb(53, 105, 51);
 $c-hay:   rgb(204, 165, 44);

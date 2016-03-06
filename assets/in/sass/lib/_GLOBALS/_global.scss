@@ -1,4 +1,4 @@
-//@include meyer-reset();
+@include meyer-reset;
 
 *{
     box-sizing: border-box;
@@ -15,6 +15,7 @@ body{
     //set smartquotes for the rest of the stylesheet
     quotes: "“" "”" "‘" "’";
 }
+
 
 img{
     width: 100%;
