@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     watch: {
       app_js: {
         files: ['assets/in/js/**/*', 'web_modules/**/*'],
-        tasks: ['']
+        tasks: ['browserify']
       },
 
       app_css: {
@@ -67,6 +67,26 @@ module.exports = function(grunt) {
         }
       }
     },
+    browserify: {
+      'dev' : {
+        'options' :{
+          'debug': true,
+          'transform': [['babelify', {presets: ['es2015', 'react']}]]
+        },
+        'files': {
+          'assets/out/js/app.js': ['assets/in/js/index.jsx']
+        },
+      },
+      'prod' : {
+        'options' :{
+          'debug': false,
+          'transform': [['babelify', {presets: ['es2015', 'react']}]]
+        },
+        'files': {
+          'assets/out/js/app.js': ['assets/in/js/index.jsx']
+        },
+      },
+    },
   });//initConfig
 
   //-----------------------------------------------------------------------------
@@ -74,7 +94,7 @@ module.exports = function(grunt) {
   // All tasks we have going in the initconfig should be registered here. Else
   //   the cli won't know what we're asking
   grunt.registerTask('default', 'Compiles sass, concats js, builds SVG sprite.', function(n) {
-    var tasklist = ['sass:app_dev', 'autoprefixer:app', 'svgstore'];
+    var tasklist = ['sass:app_dev', 'autoprefixer:app', 'svgstore', 'browserify:dev'];
 
     //watch should always be last
     if(grunt.option('watch')) {
@@ -85,7 +105,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('js', 'Concats javascript files,  pass --watch to concat as you go', function(n){
-    var tasklist = ['babel'];
+    var tasklist = ['browserify:dev'];
 
     //watch should always be last
     if(grunt.option('watch')) {
@@ -123,7 +143,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('prod', 'Compiles sass to compressed css, uglifies javascript, creates SVG sprite', function(n){
-    var tasklist = ['babel', 'uglify:app_js', 'sass:app_prod', 'svgstore', 'autoprefixer:app'];
+    var tasklist = ['browserify:prod', 'sass:app_prod', 'svgstore', 'autoprefixer:app'];
     grunt.task.run(tasklist);
   });
 };
