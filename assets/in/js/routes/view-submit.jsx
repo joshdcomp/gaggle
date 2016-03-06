@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactRouter = require("react-router");
 
-var ViewLookup = React.createClass({
-  displayName: 'Lookup',
+var ViewSubmit = React.createClass({
+  displayName: 'Submit',
   //---------------------------------------------------
   // React Lifecycle/Defaults
   //--
@@ -35,9 +35,9 @@ var ViewLookup = React.createClass({
   //--
   render: function() {
     return (
-      <div className="view_container view_container-lookup">
+      <div className="view_container view_container-submit">
         <div className="view_container--content">
-          Lookup
+          Submit
         </div>
       </div>
     );
@@ -48,4 +48,4 @@ var ViewLookup = React.createClass({
   //--
 
 });
-module.exports = ViewLookup;
+module.exports = ViewSubmit;

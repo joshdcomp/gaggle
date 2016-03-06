@@ -4,10 +4,11 @@ var React = require('react');
 var ReactRouter  = require("react-router");
 var Link = ReactRouter.Link;
 
-// var Footer = require('../components/footer.jsx');
-// var Header = require('../components/header.jsx');
+var Footer = require('../components/footer.jsx');
+var Header = require('../components/header.jsx');
 
 var App = React.createClass({
+  displayName: 'App',
   getInitialState : function() {
     return {};
   },
@@ -15,8 +16,9 @@ var App = React.createClass({
   render : function() {
     return (
       <div className="app_wrapper">
-        hello
+        <Header  />
         {this.props.children}
+        <Footer  />
       </div>
     )
   },

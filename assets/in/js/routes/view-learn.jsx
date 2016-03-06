@@ -2,6 +2,7 @@ var React = require('react');
 var ReactRouter = require("react-router");
 
 var ViewLearn = React.createClass({
+  displayName: 'ViewLearn',
   //---------------------------------------------------
   // React Lifecycle/Defaults
   //--
@@ -34,8 +35,10 @@ var ViewLearn = React.createClass({
   //--
   render: function() {
     return (
-      <div className="container-view_">
-        Learn
+      <div className="view_container view_container-learn">
+        <div className="view_container--content">
+          Learn
+        </div>
       </div>
     );
   },
