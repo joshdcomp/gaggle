@@ -15,6 +15,8 @@ After you have those set up, just do:
 
 Pass a `--watch` parameter (looks like: `$grunt --watch`) to continuously compile files as you change your files.
 
+This project was built to run solely in the browser, so no need for any server-side setup unless you want to...I really don't even know. 
+
 ## Grunt
 Grunt has several tasks set up if you don't want to re-compile everything at once:
 
