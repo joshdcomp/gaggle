@@ -35,9 +35,9 @@ var ViewSubmit = React.createClass({
   //--
   render: function() {
     return (
-      <div className="view_container view_container-submit">
-        <div className="view_container--content">
-          Submit
+      <div className="view view-submit">
+        <div className="view--content">
+          <p>Really happy you want to submit ideas. Please email me at josh@joshdcompton.com with ideas and images</p>
         </div>
       </div>
     );

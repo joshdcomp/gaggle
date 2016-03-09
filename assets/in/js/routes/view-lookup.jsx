@@ -35,8 +35,8 @@ var ViewLookup = React.createClass({
   //--
   render: function() {
     return (
-      <div className="view_container view_container-lookup">
-        <div className="view_container--content">
+      <div className="view view-lookup">
+        <div className="view--content">
           Lookup
         </div>
       </div>
