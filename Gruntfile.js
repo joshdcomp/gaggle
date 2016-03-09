@@ -38,15 +38,15 @@ module.exports = function(grunt) {
     //watch for stuff when we save
     watch: {
       app_js: {
-        files: ['assets/in/js/**/*', 'web_modules/**/*'],
-        tasks: ['browserify']
+        // files: ['assets/in/js/**/*', 'web_modules/**/*'],
+        // tasks: ['browserify']
       },
 
       app_css: {
         files: ['assets/in/sass/**/*.scss', 'assets/in/sass/*.scss'],
         tasks: ['sass:app_dev', 'autoprefixer:app']
       },
-      svg: {
+      app_svg: {
         files: ['assets/in/svg/*.svg'],
         tasks: ['svgstore'],
       },
@@ -77,6 +77,17 @@ module.exports = function(grunt) {
           'assets/out/js/app.js': ['assets/in/js/index.jsx']
         },
       },
+      'dev_watch': {
+        'options' :{
+          'debug': true,
+          'watch' : true,
+          'keepAlive' : true,
+          'transform': [['babelify', {presets: ['es2015', 'react']}]]
+        },
+        'files': {
+          'assets/out/js/app.js': ['assets/in/js/index.jsx']
+        },
+      },
       'prod' : {
         'options' :{
           'debug': false,
@@ -87,6 +98,16 @@ module.exports = function(grunt) {
         },
       },
     },
+
+    'concurrent': {
+      'watch' : {
+        'tasks': ['browserify:dev_watch', 'watch:app_css', 'watch:app_svg'],
+        'options': {
+          'logConcurrentOutput': true
+        }
+      },
+      'prod' : ['browserify:prod', ['sass:app_prod', 'autoprefixer:app'], 'svgstore'],
+    }
   });//initConfig
 
   //-----------------------------------------------------------------------------
@@ -94,11 +115,11 @@ module.exports = function(grunt) {
   // All tasks we have going in the initconfig should be registered here. Else
   //   the cli won't know what we're asking
   grunt.registerTask('default', 'Compiles sass, concats js, builds SVG sprite.', function(n) {
-    var tasklist = ['sass:app_dev', 'autoprefixer:app', 'svgstore', 'browserify:dev'];
+    var tasklist = ['browserify:dev', 'sass:app_dev', 'autoprefixer:app', 'svgstore'];
 
     //watch should always be last
     if(grunt.option('watch')) {
-      tasklist.push('watch')
+      tasklist.push('concurrent:watch')
     }
 
     grunt.task.run(tasklist);
@@ -109,7 +130,7 @@ module.exports = function(grunt) {
 
     //watch should always be last
     if(grunt.option('watch')) {
-      tasklist.push('watch:app_js');
+      tasklist[0] = 'browserify:dev_watch';
     }
 
     grunt.task.run(tasklist);
@@ -118,10 +139,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('css', 'Compiles sass to css. Pass --watch to compile as you go. Pass --ie to build the IE-specific styles', function(n){
     var tasklist = ['sass:app_dev', 'autoprefixer:app'];
-
-    if(grunt.option('ie')) {
-      tasklist.push('gapp_ie');
-    }
 
     //Watch should always be last
     if(grunt.option('watch')) {
@@ -136,14 +153,15 @@ module.exports = function(grunt) {
 
     //Watch should always be last
     if(grunt.option('watch')) {
-      tasklist.push('watch:svg');
+      tasklist.push('watch:app_svg');
     }
 
     grunt.task.run(tasklist);
   });
 
   grunt.registerTask('prod', 'Compiles sass to compressed css, uglifies javascript, creates SVG sprite', function(n){
-    var tasklist = ['browserify:prod', 'sass:app_prod', 'svgstore', 'autoprefixer:app'];
+    //runs things at the same time, way faster
+    var tasklist = ['concurrent:prod'];
     grunt.task.run(tasklist);
   });
 };
