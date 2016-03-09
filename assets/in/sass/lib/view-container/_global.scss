@@ -1,7 +1,7 @@
 // Global styles across all screen sizes, usually stuff like colors and typography
-#{$s-view_container} {
-  border-top: solid thin $c-view_container-hairline;
-  background-color: $c-view_container-bg;
+#{$s-view} {
+  border-top: solid thin $c-view-hairline;
+  background-color: $c-view-bg;
   padding-top: 80px;
   padding-bottom: 80px;
 
