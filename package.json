@@ -26,7 +26,9 @@
     "watchify": "^2.2.1"
   },
   "devDependencies": {
-    "grunt-browserify": "^4.0.1"
+    "grunt-browserify": "^4.0.1",
+    "grunt-concurrent": "^2.2.1",
+    "load-grunt-tasks": "^3.4.1"
   },
   "scripts": {
     "watch": "watchify -t 6to5ify ./assets/in/js/index.jsx -o ./assets/out/js/app.js -v"
