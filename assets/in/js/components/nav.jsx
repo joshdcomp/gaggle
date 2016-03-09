@@ -36,7 +36,7 @@ var Nav = React.createClass({
     return (
       <ul className={classes.join(' ')}>
         <li className="nav--li">
-          <Link to="/lookup" className="nav--link">Learn</Link>
+          <Link to="/learn" className="nav--link">Learn</Link>
         </li>
 
         <li className="nav--li">
