@@ -7,5 +7,15 @@
 
   &--link {
     padding: 4px 15px;
+    text-decoration: none;
+    transition: all 200ms ease;
+
+    &:link, &:visited {
+      color: $c-nav-link;
+    }
+
+    &:hover {
+      color: $c-nav-link-hover;
+    }
   }
 }
