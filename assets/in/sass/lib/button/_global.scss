@@ -1,0 +1,32 @@
+// Global styles across all screen sizes, usually stuff like colors and typography
+#{$s-button} {
+  border-radius: 200px;
+  padding: 10px 30px 13px;
+  text-align: center;
+  font-family: $t-button-ff;
+  font-weight: $t-button-fw;
+  font-size: $t-button-fs;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+
+  &:link, &:hover, &:visited, &:active {
+    color: $c-button-text;
+    text-decoration: none;
+  }
+
+  &-learn {
+    background-color: $c-button-learn-bg;
+
+    &:hover {
+      background-color: $c-button-learn-bg-hover;
+    }
+  }
+
+  &-lookup {
+    background-color: $c-button-lookup-bg;
+  }
+
+  &-submit {
+    background-color: $c-button-submit-bg;
+  }
+}

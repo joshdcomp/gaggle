@@ -17,4 +17,8 @@ $c-pond:  rgb(98, 190, 202);
 $c-fall:  rgb(211, 134, 60);
 $c-cloud: rgb(236, 234, 231);
 
+$c-learn: $c-pond;
+$c-lookup: $c-hay;
+$c-submit: $c-pine;
+
 @import "importer";

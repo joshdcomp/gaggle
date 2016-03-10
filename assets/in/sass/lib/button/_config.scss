@@ -1,0 +1,12 @@
+//Dimensions, colors, fonts, and other variables to be used in this UI element
+$s-button: '.button';
+
+$c-button-text: $_white;
+$c-button-learn-bg: $c-learn;
+$c-button-learn-bg-hover: darken($c-learn, 5%);
+$c-button-lookup-bg: $c-lookup;
+$c-button-submit-bg: $c-submit;
+
+$t-button-ff: _get($_lato, 'font-family');
+$t-button-fw: _get($_lato, 'font-weight', 'bold');
+$t-button-fs: rem(20px);

@@ -100,10 +100,12 @@ var ViewLearn = React.createClass({
       ? '/' + IllustrationStore.getRand(animal)
       : '';
     return(
-      <Link
-        to={'/learn/' + animal + pic}
-        className="button button-primary"
-      >Another!</Link>
+      <div className="view--cta_wrapper">
+        <Link
+          to={'/learn/' + animal + pic}
+          className="button button-learn"
+        >Another!</Link>
+      </div>
     );
   },
   //---------------------------------------------------
