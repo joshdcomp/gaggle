@@ -16,10 +16,36 @@
     clear: left;
     display: inline-block;
     padding: 25px 15px;
-
   }
   &--nav {
     float: right;
     padding: 25px 0;
+  }
+
+  &-learn {
+    #{$s-header} {
+      &--logo {
+        color: $c-learn-logo-text;
+        fill: $c-learn-logo-text;
+      }
+    }
+  }
+
+  &-lookup {
+    #{$s-header} {
+      &--logo {
+        color: $c-lookup-logo-text;
+        fill: $c-lookup-logo-text;
+      }
+    }
+  }
+
+  &-submit {
+    #{$s-header} {
+      &--logo {
+        color: $c-lookup-logo-text;
+        fill: $c-lookup-logo-text;
+      }
+    }
   }
 }

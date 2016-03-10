@@ -8,6 +8,7 @@
   font-size: $t-button-fs;
   letter-spacing: 1px;
   text-transform: lowercase;
+  transition: all 200ms ease;
 
   &:link, &:hover, &:visited, &:active {
     color: $c-button-text;

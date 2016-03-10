@@ -3,8 +3,8 @@
 
 //This always goes first, these are global styles/resets and such
 @import "_GLOBALS/index";
+@import "view/index";
 @import "header/index";
 @import "nav/index";
 @import "footer/index";
-@import "view/index";
 @import "button/index";
