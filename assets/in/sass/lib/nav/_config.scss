@@ -2,3 +2,5 @@
 $s-nav: '.nav';
 $c-nav-link: $c-fall;
 $c-nav-link-hover: rgb(188, 92, 33);
+$t-nav-link-ff: _get($_lato, 'font-family');
+$t-nav-link-fw: _get($_lato, 'font-weight', 'bold');

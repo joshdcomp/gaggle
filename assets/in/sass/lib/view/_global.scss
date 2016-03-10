@@ -1,0 +1,35 @@
+// Global styles across all screen sizes, usually stuff like colors and typography
+#{$s-view} {
+  border-top: solid thin $c-view-hairline;
+  background-color: $c-view-bg;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &--content {
+    width: 66%;
+    max-width: 1024px;
+    margin: auto;
+  }
+
+  &--title {
+    font-family: $t-view-title-ff;
+    font-weight: $t-view-title-fw;
+    font-size: $t-view-title-fs;
+    margin-bottom: 20px;
+    color: $c-view-title-text;
+  }
+
+  &--factoid {
+    font-family: $t-view-factoid-ff;
+    font-weight: $t-view-factoid-fw;
+    font-size: $t-view-factoid-fs;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: $c-view-factoid-text;
+    line-height: 1.5;
+
+    strong {
+      font-weight: $t-view-factoid_term-fw;
+    }
+  }
+}

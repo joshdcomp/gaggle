@@ -9,6 +9,10 @@
     padding: 4px 15px;
     text-decoration: none;
     transition: all 200ms ease;
+    font-family: $t-nav-link-ff;
+    font-weight: $t-nav-link-fw;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
 
     &:link, &:visited {
       color: $c-nav-link;
