@@ -9,7 +9,7 @@ var React = require('react');
 var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
 var IndexLink = ReactRouter.IndexLink;
-
+var Icon = require('./icon.jsx');
 /**
 * Modules
 */
@@ -37,7 +37,9 @@ var Header = React.createClass({
       >
         <div className="header--container">
           <div className="header--logo">
-            logo
+            <Icon
+              glyph="gaggle-logo"
+            />
           </div>
 
           <Nav

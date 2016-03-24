@@ -4,24 +4,31 @@ var React        = require('react');
 module.exports = React.createClass({
   displayName: 'Icon',
   getInitialState: function() {
-    var glyph = this.props.glyph;
-    var wrapperClasses = this.props.classes || [];
-    wrapperClasses.push('_icon', '_icon-' + glyph);
     return {
-      glyph: glyph || 'star',
-      wrapperClasses: wrapperClasses,
+    };
+  },
+  getDefaultProps: function() {
+    return {
+      glyph: 'star',
     };
   },
   fullName: function (href) {
-    var hash = (href)
-      ? '#'
-      : '';
-    return hash + '_icon-' + this.state.glyph;
+    return ['#', href, '_icon-' + this.props.glyph].join('');
   },
 
   render: function() {
+    var glyph = this.props.glyph;
+    var wrapperClasses = [
+      '_icon',
+      '_icon-' + glyph
+    ];
+
+    if (this.props.classes) {
+      wrapperClasses.push(this.props.classes)
+    }
+
     return (
-      <svg className={this.state.wrapperClasses.join(' ')}>
+      <svg className={wrapperClasses.join(' ')}>
         <use xlinkHref={this.fullName()} />
       </svg>
     )
