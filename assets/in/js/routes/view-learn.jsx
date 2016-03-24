@@ -26,8 +26,33 @@ var ViewLearn = React.createClass({
   componentWillMount: function() {
     // When we're on the index view there won't be any animal param,
     // so we get one and transition there if need be
-    if (!this.props.params.hasOwnProperty('animal')) {
-      this.context.router.push('/learn/' + AnimalStore.getRand().animal);
+    var animal = this.props.params.animal || AnimalStore.getRand();
+    var noun = this.props.params.noun || AnimalStore.getRand(animal);
+
+    var nouns = AnimalStore.get(this.props.params.animal);
+
+    var route = [
+      '/learn',
+      animal,
+      noun
+    ];
+
+    // Only put a pic in the route if it exists
+    console.log(animal, noun);
+    if ( !this.props.params.pic && IllustrationStore.hasPic(animal, noun) || IllustrationStore.hasPic(animal, noun) ) {
+      route.push( IllustrationStore.getRand(animal, noun) );
+      this.context.router.push(route.join('/'));
+      return false;
+    }
+
+    if (!this.props.params.animal) {
+      this.context.router.push(route.join('/'));
+      return false;
+    }
+
+    if (!nouns || nouns.indexOf(this.props.params.noun) < 0) {
+      this.context.router.push(['/submit', animal, noun].join('/'))
+      return false;
     }
   },
 
@@ -56,53 +81,81 @@ var ViewLearn = React.createClass({
   },
 
   renderFactoid: function() {
-    var map = ( this.props.params.animal )
-      ? AnimalStore.get(this.props.params.animal)
-      : AnimalStore.getRand();
-
-    var animal = map.animal || '';
-    var nouns = map.nouns || [];
-    var noun = nouns[ Math.floor( Math.random() * nouns.length )];
-
-    // IllustrationStore.get and getRand will either pass a relative url or false
-    var pic = (this.props.params.hasOwnProperty('pic'))
-      ? IllustrationStore.get(this.props.params.pic)
-      : IllustrationStore.getRand(this.props.params.pic);
-
-    var $pic = (pic)
-      ? (
-          <img
-            className="factoid--img"
-            src={pic}
-            alt={'A ' + noun + ' of ' + animal}
-            title={'A group of ' + animal + 'is called a ' + noun}
-          />
-        )
-      : '';
-
     var classes = [
       'view--factoid',
       'factoid',
-      (pic) ? 'factoid-has_pic': '',
     ];
+    var $pic = '';
+    console.log(this.props.params.pic, IllustrationStore.get(this.props.params.pic));
+    if ( this.props.params.pic && IllustrationStore.get(this.props.params.pic) ) {
+      /**
+       * Expected object for a pic from the illustration store:
+       * {
+       *   "src": "/assets/out/geese-gaggle-1.svg",
+       *   "alt": "",
+       *   "title": "",
+       *   "artist": {
+       *     "name": "Gabe Cooper",
+       *     "site": "http://www.gabecooper.com/",
+       *     "instagram": "https://www.instagram.com/gabeorlacooper/"
+       *   }
+       * }
+       */
+      var pic = IllustrationStore.get(this.props.params.pic);
 
+      var alt = (pic.hasOwnProperty('alt'))
+        ? pic.alt
+        : ['A ', this.props.params.noun, ' of ', this.props.params.animal, ' by ', pic.artist.name];
+
+      var title = (pic.hasOwnProperty('title'))
+        ? pic.title
+        : ['A ', this.props.params.noun, ' of ', this.props.params.animal, ' by ', pic.artist.name];
+
+      $pic = (
+        <img
+          className="factoid--img"
+          src={pic.src}
+          alt={alt}
+          title={title}
+        />
+      );
+      console.log($pic);
+      classes.push('factoid-has_pic')
+    }
 
     return (
       <div className={classes.join(' ')}>
-        <p>A group of <strong>{animal}</strong> is called a <strong>{noun}</strong>.</p>
+        <p className="factoid--fact">A group of <strong>{this.props.params.animal}</strong> is called {this.aAn(this.props.params.noun||'')} <strong>{this.props.params.noun}</strong>.</p>
+        {$pic}
       </div>
     );
   },
 
+  // Returns appropriate a or an for a word
+  // @TODO implement logic for H and Y
+  aAn: function(word) {
+    return (['a', 'e', 'i', 'o', 'u'].indexOf( word.charAt(0) ) < 0) ? 'a' : 'an';
+  },
+
   renderNextLink: function() {
-    var animal = AnimalStore.getRand().animal;
-    var pic = ( IllustrationStore.getRand(animal) )
-      ? '/' + IllustrationStore.getRand(animal)
-      : '';
+    var animal = AnimalStore.getRand();
+    var noun = AnimalStore.getRand(animal);
+
+    var route = [
+      '/learn',
+      animal,
+      noun
+    ];
+
+    // Only put a pic in the route if it exists
+    if ( !this.props.params.pic && IllustrationStore.hasPic(animal, noun) ) {
+      route.push( IllustrationStore.getRand(animal, noun) );
+    }
+
     return(
       <div className="view--cta_wrapper">
         <Link
-          to={'/learn/' + animal + pic}
+          to={route.join('/')}
           className="button button-learn"
         >Another!</Link>
       </div>

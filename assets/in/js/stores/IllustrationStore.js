@@ -8,30 +8,40 @@ var IllustrationStore = {
 // `noun` is optional. If noun is defined and exists, send that, else
 // send the whole thing. If id is passed and there's a match in the
 // array, send that. Else, return null
-IllustrationStore.get = function(noun) {
-  var result = null;
+IllustrationStore.get = function(animal, noun, key) {
+  console.log(this.collection, animal, noun);
+  if (!animal || !noun) return false;
 
-  if ( noun && IllustrationStore.hasOwnProperty(noun) ) {
-    result = IllustrationStore[noun];
+  var result = false;
+
+  if ( IllustrationStore.collection.hasOwnProperty(animal)
+       && IllustrationStore.collection[animal].hasOwnProperty(noun)
+  ) {
+    // IllustrationStore[animal][noun] should be an array,
+    // so no need to check hasOwnProperty
+    result = IllustrationStore[animal][noun][key] || false;
   }
-  else {
-    result = IllustrationStore.collection;
-  }
+
   return result;
 };
 
 //Definitely needs some work
-IllustrationStore.getRand = function(noun) {
-  var result = null;
+IllustrationStore.getRand = function(animal, noun) {
+  if (!animal || !noun) return false;
 
-  if ( noun && IllustrationStore.hasOwnProperty(noun) ) {
-    result = IllustrationStore.collection;
-  }
-  else {
-    console.log(IllustrationStore[noun]);
-    result = IllustrationStore[noun];
-  }
-  return result;
+  var result = null;
+  var pics = IllustrationStore[animal][noun];
+
+  return pics[ Math.floor(Math.random() * pics.length) ];
+};
+
+IllustrationStore.hasPic = function(animal, noun) {
+  console.log(this.collection);
+  if (!animal || !noun) return false;
+
+  return IllustrationStore.hasOwnProperty(animal)
+      && IllustrationStore.animal.hasOwnProperty(noun)
+      && IllustrationStore.animal.noun.length > 0;
 };
 
 module.exports = IllustrationStore;

@@ -17,9 +17,9 @@ var GaggleRoutes = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={ViewLearn} />
-      <Route name="RouteLearn" path="/learn(/:animal(/:pic))" component={ViewLearn} />
+      <Route name="RouteLearn" path="/learn(/:animal(/:noun(/:pic)))" component={ViewLearn} />
       <Route name="RouteLookup" path="/lookup(/:type/:term)" component={ViewLookup} />
-      <Route name="RouteSubmit" path="/submit" component={ViewSubmit} />
+      <Route name="RouteSubmit" path="/submit(/:animal/:noun)" component={ViewSubmit} />
     </Route>
   </Router>
 );

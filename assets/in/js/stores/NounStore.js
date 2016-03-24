@@ -20,7 +20,7 @@ NounStore.get = function(noun) {
   return result;
 };
 
-NounStore.getRand = function() {
+NounStore.getRand = function(animal) {
   //get the key for the animal
   var nounsKeys = Object.keys(NounStore.collection);
   var pointer = Math.floor(Math.random() * nounsKeys.length);

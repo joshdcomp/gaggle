@@ -11,12 +11,8 @@ var AnimalStore = {
 AnimalStore.get = function(animal) {
   var result = null;
 
-  if ( animal && AnimalStore.collection[animal] ) {
-    console.log(AnimalStore.collection[animal]);
-    result = {
-      'animal': animal,
-      'nouns': AnimalStore.collection[animal]
-    };
+  if ( animal ) {
+    result = AnimalStore.collection[animal];
   }
   else {
     result = AnimalStore.collection;
@@ -24,19 +20,16 @@ AnimalStore.get = function(animal) {
   return result;
 };
 
-AnimalStore.getRand = function() {
-  //get the key for the animal
-  var animalKeys = Object.keys(AnimalStore.collection);
-  var pointer = Math.floor(Math.random() * animalKeys.length);
-  var animal = animalKeys[pointer];
-
-  //get the term we'll display this time
-  var nouns = AnimalStore.collection[animal];
-
-  return {
-    'animal': animal,
-    'nouns': nouns,
-  };
+AnimalStore.getRand = function(animal) {
+  if (animal) {
+    var nouns = AnimalStore.collection[animal];
+    return nouns[Math.floor(Math.random() * nouns.length)];
+  }
+  else {
+    var animalKeys = Object.keys(AnimalStore.collection);
+    var pointer = Math.floor(Math.random() * animalKeys.length);
+    return animalKeys[pointer];
+  }
 };
 
 module.exports = AnimalStore;
