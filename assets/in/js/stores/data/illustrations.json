@@ -2,7 +2,7 @@
   "geese" : {
     "gaggle": [
       {
-        "src": "/assets/out/geese-gaggle-1.svg",
+        "src": "/assets/svg/geese-gaggle-1.svg",
         "alt": "A gaggle of geese by Gabe Cooper",
         "title": "It's funny because you can see its butt",
         "artist": {
@@ -10,31 +10,34 @@
           "site": "http://www.gabecooper.com/",
           "instagram": "https://www.instagram.com/gabeorlacooper/"
         }
-      }
+      },
+      {}
     ]
   },
   "owls" : {
     "parliament": [
       {
-        "src": "/assets/out/owls-parliament-1.svg",
+        "src": "/assets/svg/owls-parliament-1.svg",
         "artist": {
           "name": "Gabe Cooper",
           "site": "http://www.gabecooper.com/",
           "instagram": "https://www.instagram.com/gabeorlacooper/"
         }
-      }
+      },
+      {}
     ]
   },
   "developers": {
     "repository": [
       {
-        "src": "/assets/out/developers-repository-1.svg",
+        "src": "/assets/svg/developers-repository-1.svg",
         "artist": {
           "name": "Gabe Cooper",
           "site": "http://www.gabecooper.com/",
           "instagram": "https://www.instagram.com/gabeorlacooper/"
         }
-      }
+      },
+      {}
     ]
   }
 }

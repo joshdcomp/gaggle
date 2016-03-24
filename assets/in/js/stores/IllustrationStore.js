@@ -9,17 +9,17 @@ var IllustrationStore = {
 // send the whole thing. If id is passed and there's a match in the
 // array, send that. Else, return null
 IllustrationStore.get = function(animal, noun, key) {
-  console.log(this.collection, animal, noun);
   if (!animal || !noun) return false;
 
   var result = false;
+  var key = key || 0;
 
   if ( IllustrationStore.collection.hasOwnProperty(animal)
        && IllustrationStore.collection[animal].hasOwnProperty(noun)
   ) {
     // IllustrationStore[animal][noun] should be an array,
     // so no need to check hasOwnProperty
-    result = IllustrationStore[animal][noun][key] || false;
+    result = IllustrationStore.collection[animal][noun][key] || false;
   }
 
   return result;
@@ -36,7 +36,6 @@ IllustrationStore.getRand = function(animal, noun) {
 };
 
 IllustrationStore.hasPic = function(animal, noun) {
-  console.log(this.collection);
   if (!animal || !noun) return false;
 
   return IllustrationStore.hasOwnProperty(animal)

@@ -38,7 +38,6 @@ var ViewLearn = React.createClass({
     ];
 
     // Only put a pic in the route if it exists
-    console.log(animal, noun);
     if ( !this.props.params.pic && IllustrationStore.hasPic(animal, noun) || IllustrationStore.hasPic(animal, noun) ) {
       route.push( IllustrationStore.getRand(animal, noun) );
       this.context.router.push(route.join('/'));
@@ -86,8 +85,8 @@ var ViewLearn = React.createClass({
       'factoid',
     ];
     var $pic = '';
-    console.log(this.props.params.pic, IllustrationStore.get(this.props.params.pic));
-    if ( this.props.params.pic && IllustrationStore.get(this.props.params.pic) ) {
+
+    if ( this.props.params.pic || IllustrationStore.get(this.props.params.animal, this.props.params.noun) ) {
       /**
        * Expected object for a pic from the illustration store:
        * {
@@ -101,7 +100,8 @@ var ViewLearn = React.createClass({
        *   }
        * }
        */
-      var pic = IllustrationStore.get(this.props.params.pic);
+      var pic = IllustrationStore.get(this.props.params.animal, this.props.params.noun);
+      console.log(pic);
 
       var alt = (pic.hasOwnProperty('alt'))
         ? pic.alt
@@ -119,7 +119,7 @@ var ViewLearn = React.createClass({
           title={title}
         />
       );
-      console.log($pic);
+
       classes.push('factoid-has_pic')
     }
 
