@@ -12,10 +12,10 @@ AnimalStore.get = function(animal) {
   var result = null;
 
   if ( animal ) {
-    result = AnimalStore.collection[animal];
+    result = this.collection[animal];
   }
   else {
-    result = AnimalStore.collection;
+    result = this.collection;
   }
   return result;
 };

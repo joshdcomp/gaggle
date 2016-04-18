@@ -6,4 +6,18 @@
     margin-bottom: 80px;
     width: 55%;
   }
+
+  &--fact {
+    font-family: $t-factoid-fact-ff;
+    font-weight: $t-factoid-fact-fw;
+    font-size: $t-factoid-fact-fs;
+    font-style: italic;
+    margin-bottom: 80px;
+    color: $c-factoid-fact-text;
+    line-height: 1.5;
+
+    strong {
+      font-weight: $t-factoid_term-fw;
+    }
+  }
 }

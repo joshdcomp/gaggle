@@ -9,7 +9,7 @@
     width: 66%;
     max-width: 1024px;
     margin: auto;
-    height: 500px;
+    min-height: 500px;
     position: relative;
   }
 
@@ -22,17 +22,8 @@
   }
 
   &--factoid {
-    font-family: $t-view-factoid-ff;
-    font-weight: $t-view-factoid-fw;
-    font-size: $t-view-factoid-fs;
-    font-style: italic;
     margin-bottom: 80px;
     color: $c-view-factoid-text;
-    line-height: 1.5;
-
-    strong {
-      font-weight: $t-view-factoid_term-fw;
-    }
   }
 
   &--cta_wrapper {

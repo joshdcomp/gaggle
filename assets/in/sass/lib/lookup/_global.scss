@@ -1,0 +1,66 @@
+// Global styles across all screen sizes, usually stuff like colors and typography
+#{$s-lookup} {
+  &--query {
+    font-family: $t-lookup-query-ff;
+    font-weight: $t-lookup-query-fw;
+    font-size: $t-lookup-query-fs;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: $c-lookup-query-text;
+    line-height: 1.5;
+  }
+
+  &--term {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid thin $c-lookup-query-text;
+    color: $c-lookup-query-text;
+    padding: 4px 10px;
+    margin: 0 10px;
+    font-family: $t-lookup-query-ff;
+    font-weight: $t-lookup-query_term-fw;
+    font-size: $t-lookup-query-fs;
+    line-height: 1.5;
+    box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+    transition: all 100ms ease;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--results {
+
+  }
+
+  &--results_null {
+    font-family: $t-lookup-result-ff;
+    font-weight: $t-lookup-result-fw;
+    font-size: $t-lookup-result-fs;
+    font-style: italic;
+    margin-bottom: 0;
+    color: $c-lookup-result-text;
+    line-height: 1.5;
+  }
+
+  &--result_list {
+    list-style: disc;
+    padding-left: 15px;
+    margin-left: 25px;
+  }
+
+  &--result_item {
+    font-family: $t-lookup-result-ff;
+    font-weight: $t-lookup-result-fw;
+    font-size: $t-lookup-result-fs;
+    font-style: italic;
+    margin-bottom: 0;
+    color: $c-lookup-result-text;
+    line-height: 1.5;
+
+    strong {
+      font-weight: $t-lookup-result_term-fw;
+    }
+  }
+}

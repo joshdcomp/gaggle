@@ -1,2 +1,9 @@
 //Dimensions, colors, fonts, and other variables to be used in this UI element
 $s-factoid: '.factoid';
+
+$t-factoid-fact-ff: _get($_merriweather, 'font-family');
+$t-factoid-fact-fw: _get($_merriweather, 'font-weight', 'light');
+$t-factoid_term-fw: _get($_merriweather, 'font-weight', 'bold');
+$t-factoid-fact-fs: rem(30px);
+
+$c-factoid-fact-text: gray(109);

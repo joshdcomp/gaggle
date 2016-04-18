@@ -1,0 +1,17 @@
+//Dimensions, colors, fonts, and other variables to be used in this UI element
+$s-lookup: '.lookup';
+
+$t-lookup-query-ff: _get($_merriweather, 'font-family');
+$t-lookup-query-fw: _get($_merriweather, 'font-weight', 'light');
+$t-lookup-query_term-fw: _get($_merriweather, 'font-weight', 'bold');
+$t-lookup-query-fs: rem(30px);
+
+$c-lookup-query-text: gray(109);
+
+
+$t-lookup-result-ff: _get($_merriweather, 'font-family');
+$t-lookup-result-fw: _get($_merriweather, 'font-weight', 'light');
+$t-lookup-result_term-fw: _get($_merriweather, 'font-weight', 'bold');
+$t-lookup-result-fs: rem(25px);
+
+$c-lookup-result-text: gray(109);
