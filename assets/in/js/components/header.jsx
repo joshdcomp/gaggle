@@ -39,6 +39,7 @@ var Header = React.createClass({
           <div className="header--logo">
             <Icon
               glyph="gaggle-logo"
+              className="header--logo_svg"
             />
           </div>
 
