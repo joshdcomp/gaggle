@@ -4,6 +4,7 @@ var Link = ReactRouter.Link;
 var AnimalStore = require("../stores/AnimalStore.js");
 var IllustrationStore = require('../stores/IllustrationStore.js');
 var NounStore = require('../stores/NounStore.js');
+var KeyMaster = require("keymaster");
 
 var ViewLearn = React.createClass({
   displayName: 'ViewLearn',
@@ -53,21 +54,23 @@ var ViewLearn = React.createClass({
       this.context.router.push(['/submit', animal, noun].join('/'))
       return false;
     }
+
+    KeyMaster('space', this.handleKeyUp);
   },
 
   // componentDidMount: function() {
 
   // },
 
-  // componentWillUnmount: function() {
-
-  // },
+  componentWillUnmount: function() {
+    KeyMaster.unbind('space', this.handleKeyUp);
+  },
   //---------------------------------------------------
   // Render Functions
   //--
   render: function() {
     return (
-      <div className="view view-learn">
+      <div className="view view-learn" onKeyUp={this.handleKeyUp}>
         <div className="view--content">
           <h2 className="view--title">Did you know...</h2>
 
@@ -125,19 +128,29 @@ var ViewLearn = React.createClass({
 
     return (
       <div className={classes.join(' ')}>
-        <p className="factoid--fact">A group of <strong>{this.props.params.animal}</strong> is called {this.aAn(this.props.params.noun||'')} <strong>{this.props.params.noun}</strong>.</p>
+        <p className="factoid--fact">
+          A group of <strong>{this.props.params.animal}</strong> is called {this.aAn(this.props.params.noun||'')} <strong>{this.props.params.noun}</strong>.
+        </p>
+
         {$pic}
       </div>
     );
   },
 
-  // Returns appropriate a or an for a word
-  // @TODO implement logic for H and Y
-  aAn: function(word) {
-    return (['a', 'e', 'i', 'o', 'u'].indexOf( word.charAt(0) ) < 0) ? 'a' : 'an';
-  },
-
   renderNextLink: function() {
+    return(
+      <div className="view--cta_wrapper">
+        <Link
+          to={this.getNextRoute()}
+          className="button button-learn"
+        >Another!</Link>
+      </div>
+    );
+  },
+  //---------------------------------------------------
+  // Consumer-defined functions
+  //--
+  getNextRoute: function() {
     var animal = AnimalStore.getRand();
     var noun = AnimalStore.getRand(animal);
 
@@ -152,18 +165,18 @@ var ViewLearn = React.createClass({
       route.push( IllustrationStore.getRand(animal, noun) );
     }
 
-    return(
-      <div className="view--cta_wrapper">
-        <Link
-          to={route.join('/')}
-          className="button button-learn"
-        >Another!</Link>
-      </div>
-    );
+    return route.join('/');
   },
-  //---------------------------------------------------
-  // Consumer-defined functions
-  //--
+  // Returns appropriate a or an for a word
+  // @TODO implement logic for H and Y
+  aAn: function(word) {
+    return (['a', 'e', 'i', 'o', 'u'].indexOf( word.charAt(0) ) < 0) ? 'a' : 'an';
+  },
 
+  handleKeyUp: function(e, props) {
+    if (props.key === 'space') {
+      this.context.router.push( this.getNextRoute() );
+    }
+  },
 });
 module.exports = ViewLearn;
