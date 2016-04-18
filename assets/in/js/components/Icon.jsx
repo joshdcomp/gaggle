@@ -1,4 +1,4 @@
-var React        = require('react');
+var React = require('react');
 
 //Icon
 module.exports = React.createClass({
@@ -7,11 +7,14 @@ module.exports = React.createClass({
     return {
     };
   },
+
   getDefaultProps: function() {
     return {
       glyph: 'star',
+      className: '',
     };
   },
+
   fullName: function (href) {
     return ['#', href, '_icon-' + this.props.glyph].join('');
   },
@@ -20,12 +23,9 @@ module.exports = React.createClass({
     var glyph = this.props.glyph;
     var wrapperClasses = [
       '_icon',
-      '_icon-' + glyph
+      '_icon-' + glyph,
+      this.props.className
     ];
-
-    if (this.props.classes) {
-      wrapperClasses.push(this.props.classes)
-    }
 
     return (
       <svg className={wrapperClasses.join(' ')}>
