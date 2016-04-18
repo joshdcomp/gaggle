@@ -9,6 +9,8 @@
     width: 66%;
     max-width: 1024px;
     margin: auto;
+    height: 500px;
+    position: relative;
   }
 
   &--title {
@@ -37,5 +39,8 @@
     text-align: center;
     clear: both;
     margin-top: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }

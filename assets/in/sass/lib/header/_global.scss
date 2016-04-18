@@ -10,16 +10,25 @@
   &--container {
     width: _get($d-global_container-width, 'large');
     margin: auto;
+    height: 140px;
   }
 
   &--logo {
     clear: left;
     display: inline-block;
-    padding: 25px 15px;
+    height: 100%;
+    width: 200px;
   }
+
+  &--logo_svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
   &--nav {
     float: right;
-    padding: 25px 0;
+    padding: 0;
   }
 
   &-learn {
