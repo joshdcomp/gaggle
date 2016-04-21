@@ -29,6 +29,7 @@ var ViewLearn = React.createClass({
     // so we get one and transition there if need be
     if (!this.props.params.animal) {
       this.context.router.push('/learn/geese/gaggle');
+      return false;
     }
 
     var animal = this.props.params.animal;
