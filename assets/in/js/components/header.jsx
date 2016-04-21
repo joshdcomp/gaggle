@@ -13,7 +13,7 @@ var IndexLink = ReactRouter.IndexLink;
 * Modules
 */
 var Nav = require('./nav.jsx');
-// var Icon = require('./icon.jsx');
+var Icon = require('./_icon.jsx');
 
 /**
 * The Module Actual
@@ -37,10 +37,10 @@ var Header = React.createClass({
       >
         <div className="header--container">
           <div className="header--logo">
-            {/*<Icon
+            <Icon
               glyph="gaggle-logo"
               className="header--logo_svg"
-            />*/}
+            />
           </div>
 
           <Nav
