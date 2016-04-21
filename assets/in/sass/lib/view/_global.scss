@@ -34,4 +34,16 @@
     bottom: 0;
     width: 100%;
   }
+
+  &-submit {
+    p {
+      font-family: $t-view-text-ff;
+      font-weight: $t-view-text-fw;
+      font-size: $t-view-text-fs;
+      font-style: italic;
+      margin-bottom: 80px;
+      color: $c-view-text-text;
+      line-height: 1.5;
+    }
+  }
 }
