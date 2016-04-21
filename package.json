@@ -32,7 +32,8 @@
   },
 
   "scripts": {
-    "start": "grunt heroku"
+    "start": "",
+    "postinstall": "grunt heroku",
   },
   "author": "",
   "license": "ISC"
