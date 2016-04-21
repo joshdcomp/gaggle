@@ -9,11 +9,11 @@ var React = require('react');
 var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
 var IndexLink = ReactRouter.IndexLink;
-var Icon = require('./icon.jsx');
 /**
 * Modules
 */
 var Nav = require('./nav.jsx');
+var Icon = require('./icon.jsx');
 
 /**
 * The Module Actual
