@@ -27,7 +27,7 @@ var ViewLearn = React.createClass({
   componentWillMount: function() {
     // When we're on the index view there won't be any animal param,
     // so we get one and transition there if need be
-    if (!this.props.animal) {
+    if (!this.props.params.animal) {
       this.context.router.push('/learn/geese/gaggle');
     }
 
