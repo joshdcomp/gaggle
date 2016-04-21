@@ -4,7 +4,9 @@
   "description": "u wot m8",
   "main": "index.js",
   "repository": "https://github.com/joshdcomp/gaggle",
-
+  "engines": {
+    "node": "4.1.1"
+  },
   "dependencies": {
     "npm": "^3.7.5",
     "grunt": "^0.4.5",
@@ -33,7 +35,7 @@
 
   "scripts": {
     "start": "",
-    "postinstall": "grunt heroku"
+    "postinstall": "npm install -g grunt && grunt heroku"
   },
   "author": "",
   "license": "ISC"
