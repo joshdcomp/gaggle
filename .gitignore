@@ -40,6 +40,3 @@ node_modules
 
 # Compiled assets
 assets/out/
-
-# Composer assets
-vendor/
