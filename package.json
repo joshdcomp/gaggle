@@ -33,7 +33,7 @@
 
   "scripts": {
     "start": "",
-    "postinstall": "grunt heroku",
+    "postinstall": "grunt heroku"
   },
   "author": "",
   "license": "ISC"
