@@ -35,7 +35,7 @@
 
   "scripts": {
     "start": "",
-    "postinstall": "npm install -g grunt && grunt heroku"
+    "postinstall": "npm install -g grunt && grunt"
   },
   "author": "",
   "license": "ISC"
