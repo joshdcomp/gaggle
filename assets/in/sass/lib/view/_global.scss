@@ -11,6 +11,12 @@
     margin: auto;
     min-height: 500px;
     position: relative;
+
+    &:before, &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
   }
 
   &--title {
