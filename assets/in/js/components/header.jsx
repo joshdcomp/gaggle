@@ -13,7 +13,7 @@ var IndexLink = ReactRouter.IndexLink;
 * Modules
 */
 var Nav = require('./nav.jsx');
-// var Icon = require('./icon.jsx');
+var Icon = require('./icon.jsx');
 
 /**
 * The Module Actual
