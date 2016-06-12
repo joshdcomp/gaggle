@@ -36,12 +36,15 @@ var Header = React.createClass({
         className={classes.join(' ')}
       >
         <div className="header--container">
-          <div className="header--logo">
+          <Link
+            to="/"
+            className="header--logo"
+          >
             <Icon
               glyph="gaggle-logo"
               className="header--logo_svg"
             />
-          </div>
+          </Link>
 
           <Nav
             className="header--nav"
