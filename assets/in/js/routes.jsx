@@ -9,14 +9,15 @@ var browserHistory = ReactRouter.browserHistory;
 var App = require('./routes/app.jsx');
 
 // General template components
-var ViewLearn  = require('./routes/view-learn.jsx');
-var ViewLookup = require('./routes/view-lookup.jsx');
-var ViewSubmit = require('./routes/view-submit.jsx');
+var ViewWelcome = require('./routes/view-welcome.jsx');
+var ViewLearn   = require('./routes/view-learn.jsx');
+var ViewLookup  = require('./routes/view-lookup.jsx');
+var ViewSubmit  = require('./routes/view-submit.jsx');
 
 var GaggleRoutes = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={ViewLearn} />
+      <IndexRoute component={ViewWelcome} />
       <Route name="RouteLearn" path="/learn(/:animal(/:noun(/:pic)))" component={ViewLearn} />
       <Route name="RouteLookup" path="/lookup(/:type/:term)" component={ViewLookup} />
       <Route name="RouteSubmit" path="/submit(/:animal/:noun)" component={ViewSubmit} />
