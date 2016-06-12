@@ -38,7 +38,7 @@ var ViewWelcome = React.createClass({
           <h2 className="view--title">Welcome!</h2>
           <p>Gaggle is a fun way to learn about collective nouns.</p>
 
-          <h3>Take pictures and create your own nouns</h3>
+          <h3>Get the iOS app!</h3>
           <p>Take pictures and make your own collective nouns with the <Link to="https://itunes.apple.com/us/app/gaggle-club/id1112225433?ls=1&mt=8">ios app</Link></p>
         </div>
       </div>
