@@ -114,54 +114,83 @@ module.exports = function(grunt) {
   //CUSTOM CLI COMMANDS
   // All tasks we have going in the initconfig should be registered here. Else
   //   the cli won't know what we're asking
-  grunt.registerTask('default', 'Compiles sass, concats js, builds SVG sprite.', function(n) {
-    var tasklist = ['browserify:dev', 'sass:app_dev', 'autoprefixer:app', 'svgstore'];
+  grunt.registerTask(
+    'default',
+    'Compiles sass, concats js, builds SVG sprite.',
+    function(n) {
+      var tasklist = ['browserify:dev', 'sass:app_dev', 'autoprefixer:app', 'svgstore'];
 
-    //watch should always be last
-    if(grunt.option('watch')) {
-      tasklist.push('concurrent:watch')
+      //watch should always be last
+      if(grunt.option('watch')) {
+        tasklist.push('concurrent:watch')
+      }
+
+      grunt.task.run(tasklist);
     }
+  );
 
-    grunt.task.run(tasklist);
-  });
+  grunt.registerTask(
+    'js',
+    'Concats javascript files,  pass --watch to concat as you go',
+    function(n){
+      var tasklist = ['browserify:dev'];
 
-  grunt.registerTask('js', 'Concats javascript files,  pass --watch to concat as you go', function(n){
-    var tasklist = ['browserify:dev'];
+      //watch should always be last
+      if(grunt.option('watch')) {
+        tasklist[0] = 'browserify:dev_watch';
+      }
 
-    //watch should always be last
-    if(grunt.option('watch')) {
-      tasklist[0] = 'browserify:dev_watch';
+      grunt.task.run(tasklist);
     }
-
-    grunt.task.run(tasklist);
-  });
+  );
 
 
-  grunt.registerTask('css', 'Compiles sass to css. Pass --watch to compile as you go. Pass --ie to build the IE-specific styles', function(n){
-    var tasklist = ['sass:app_dev', 'autoprefixer:app'];
+  grunt.registerTask(
+    'css',
+    'Compiles sass to css. Pass --watch to compile as you go. Pass --ie to build the IE-specific styles',
+    function(n){
+      var tasklist = ['sass:app_dev', 'autoprefixer:app'];
 
-    //Watch should always be last
-    if(grunt.option('watch')) {
-      tasklist.push('watch:app_css');
+      //Watch should always be last
+      if(grunt.option('watch')) {
+        tasklist.push('watch:app_css');
+      }
+
+      grunt.task.run(tasklist);
     }
+  );
 
-    grunt.task.run(tasklist);
-  });
+  grunt.registerTask(
+    'svg',
+    'Combines svg files into a new SVG sprite, pass --watch to combine as you go',
+    function(n){
+      var tasklist = ['svgstore'];
 
-  grunt.registerTask('svg', 'Combines svg files into a new SVG sprite, pass --watch to combine as you go', function(n){
-    var tasklist = ['svgstore'];
+      //Watch should always be last
+      if(grunt.option('watch')) {
+        tasklist.push('watch:app_svg');
+      }
 
-    //Watch should always be last
-    if(grunt.option('watch')) {
-      tasklist.push('watch:app_svg');
+      grunt.task.run(tasklist);
     }
+  );
 
-    grunt.task.run(tasklist);
-  });
+  grunt.registerTask(
+    'heroku',
+    'Compiles sass to compressed css, uglifies javascript, creates SVG sprite',
+    function(n){
+      //runs things at the same time, way faster
+      var tasklist = ['concurrent:prod'];
+      grunt.task.run(tasklist);
+    }
+  );
 
-  grunt.registerTask('heroku', 'Compiles sass to compressed css, uglifies javascript, creates SVG sprite', function(n){
-    //runs things at the same time, way faster
-    var tasklist = ['concurrent:prod'];
-    grunt.task.run(tasklist);
-  });
+  grunt.registerTask(
+    'watch',
+    'Overwrites the default watch task, which...well completely freaks out',
+    function(n) {
+      var tasklist = ['browserify:dev', 'sass:app_dev', 'autoprefixer:app', 'svgstore', 'conc'];
+      grunt.task.run(tasklist);
+    }
+  );
 };
