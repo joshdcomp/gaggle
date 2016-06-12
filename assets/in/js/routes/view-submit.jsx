@@ -32,9 +32,9 @@ var ViewSubmit = React.createClass({
     return (
       <div className="view view-submit">
         <div className="view--content">
-          <p>We're really so happy you're interested in Gaggle and want to contribute ideas.</p>
+          <p>We're really so happy you're interested in Gaggle and want to contribute.</p>
           {$idea}
-          <p>Please email me at josh@joshdcompton.com with noun ideas or images</p>
+          <p>Hit up Josh at <a href="https://twitter.com/joshdcom">@joshdcomp</a> with noun ideas or images, PM's open!</p>
         </div>
       </div>
     );

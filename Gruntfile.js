@@ -159,7 +159,7 @@ module.exports = function(grunt) {
     grunt.task.run(tasklist);
   });
 
-  grunt.registerTask('prod', 'Compiles sass to compressed css, uglifies javascript, creates SVG sprite', function(n){
+  grunt.registerTask('heroku', 'Compiles sass to compressed css, uglifies javascript, creates SVG sprite', function(n){
     //runs things at the same time, way faster
     var tasklist = ['concurrent:prod'];
     grunt.task.run(tasklist);

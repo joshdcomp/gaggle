@@ -1,7 +1,7 @@
 var React = require('react');
 
 //Icon
-module.exports = React.createClass({
+var Icon = React.createClass({
   displayName: 'Icon',
   getInitialState: function() {
     return {
@@ -34,3 +34,4 @@ module.exports = React.createClass({
     )
   }
 });
+module.exports = Icon;
