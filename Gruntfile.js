@@ -37,11 +37,6 @@ module.exports = function(grunt) {
 
     //watch for stuff when we save
     watch: {
-      app_js: {
-        // files: ['assets/in/js/**/*', 'web_modules/**/*'],
-        // tasks: ['browserify']
-      },
-
       app_css: {
         files: ['assets/in/sass/**/*.scss', 'assets/in/sass/*.scss'],
         tasks: ['sass:app_dev', 'autoprefixer:app']
@@ -67,6 +62,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     browserify: {
       'dev' : {
         'options' :{
@@ -181,15 +177,6 @@ module.exports = function(grunt) {
     function(n){
       //runs things at the same time, way faster
       var tasklist = ['concurrent:prod'];
-      grunt.task.run(tasklist);
-    }
-  );
-
-  grunt.registerTask(
-    'watch',
-    'Overwrites the default watch task, which...well completely freaks out',
-    function(n) {
-      var tasklist = ['browserify:dev', 'sass:app_dev', 'autoprefixer:app', 'svgstore', 'conc'];
       grunt.task.run(tasklist);
     }
   );
