@@ -3,8 +3,7 @@ $s-view: '.view';
 
 $c-view-hairline: gray(204);
 $c-view-bg: gray(226);
-
-
+$c-view-factoid-text: gray(109);
 
 $t-view-title-ff: _get($_lato, 'font-family');
 $t-view-title-fw: _get($_lato, 'font-weight', 'bold');
@@ -15,5 +14,3 @@ $t-view-text-ff: _get($_merriweather, 'font-family');
 $t-view-text-fw: _get($_merriweather, 'font-weight', 'light');
 $t-view-text-fs: rem(30px);
 $c-view-text-text: gray(109);
-
-$c-view-factoid-text: gray(109);

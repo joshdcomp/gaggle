@@ -1,4 +1,8 @@
 //All styles pertaining to the `large` breakpoint, usually font-size and dimensions
 @media screen and (min-width: $_mq-l - 1px){
-
+  #{$s-header} {
+    &--container {
+      width: _get($d-global_container-width, 'large');
+    }
+  }
 }

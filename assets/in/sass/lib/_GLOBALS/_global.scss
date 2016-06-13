@@ -20,7 +20,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $t-header-ff;
   font-weight: $t-header-fw;
   margin-top: 30px;
+  //basically for h4-h6
   font-size: rem(20px);
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: rem(40px);
+}
+
+h2 {
+  font-size: rem(30px);
+}
+
+h3 {
+  font-size: rem(25px);
 }
 
 p {
@@ -29,6 +44,25 @@ p {
 
 img{
     width: 100%;
+}
+
+a {
+  color: _get($c-link-text, 'link');
+  text-decoration: none;
+  transition: all 200ms ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: _get($c-link-text, 'hover');
+  }
+
+  &:visited {
+    color: _get($c-link-text, 'visited');
+  }
+
+  &:active {
+    color: _get($c-link-text, 'active');
+  }
 }
 
 ::selection {

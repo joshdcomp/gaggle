@@ -1,4 +1,9 @@
 //All styles pertaining to the `medium` breakpoint, usually font-size and dimensions
 @media screen and (min-width: $_mq-m){
-
+  #{$s-header} {
+    &--container {
+      width: _get($d-global_container-width, 'medium');
+      padding: 0 $d-general-spacing;
+    }
+  }
 }
