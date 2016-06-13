@@ -59,13 +59,11 @@ var ViewLearn = React.createClass({
       this.context.router.push(['/submit', animal, noun].join('/'))
       return false;
     }
-
-    KeyMaster('space', this.handleKeyUp);
   },
 
-  // componentDidMount: function() {
-
-  // },
+  componentDidMount: function() {
+    KeyMaster('space', this.handleKeyUp);
+  },
 
   componentWillUnmount: function() {
     KeyMaster.unbind('space', this.handleKeyUp);
@@ -180,6 +178,7 @@ var ViewLearn = React.createClass({
 
   handleKeyUp: function(e, props) {
     if (props.key === 'space') {
+      e.preventDefault();
       this.context.router.push( this.getNextRoute() );
     }
   },
