@@ -103,7 +103,18 @@ module.exports = function(grunt) {
         }
       },
       'prod' : ['browserify:prod', ['sass:app_prod', 'autoprefixer:app'], 'svgstore'],
-    }
+    },
+
+    'uglify': {
+      'options': {
+        mangle: false
+      },
+      'prod': {
+        'files': {
+          'assets/out/js/app.js' : 'assets/out/js/app.js'
+        }
+      }
+    },
   });//initConfig
 
   //-----------------------------------------------------------------------------
@@ -176,7 +187,7 @@ module.exports = function(grunt) {
     'Compiles sass to compressed css, uglifies javascript, creates SVG sprite',
     function(n){
       //runs things at the same time, way faster
-      var tasklist = ['concurrent:prod'];
+      var tasklist = ['concurrent:prod', 'uglify:prod'];
       grunt.task.run(tasklist);
     }
   );
