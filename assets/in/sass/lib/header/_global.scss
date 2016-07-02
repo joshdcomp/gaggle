@@ -31,29 +31,23 @@
   }
 
   &-learn {
-    #{$s-header} {
-      &--logo {
-        color: $c-learn-logo-text;
-        fill: $c-learn-logo-text;
-      }
+    #gaggle-logo-word {
+      color: $c-lookup-logo-text;
+      fill: $c-lookup-logo-text;
     }
   }
 
   &-lookup {
-    #{$s-header} {
-      &--logo {
-        color: $c-lookup-logo-text;
-        fill: $c-lookup-logo-text;
-      }
+    #gaggle-logo-word {
+      color: $c-lookup-logo-text;
+      fill: $c-lookup-logo-text;
     }
   }
 
   &-submit {
-    #{$s-header} {
-      &--logo {
-        color: $c-lookup-logo-text;
-        fill: $c-lookup-logo-text;
-      }
+    #gaggle-logo-word {
+      color: $c-lookup-logo-text;
+      fill: $c-lookup-logo-text;
     }
   }
 }

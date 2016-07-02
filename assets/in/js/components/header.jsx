@@ -9,6 +9,7 @@ var React = require('react');
 var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
 var IndexLink = ReactRouter.IndexLink;
+var Constants = require('../constants.jsx');
 /**
 * Modules
 */
@@ -28,12 +29,12 @@ var Header = React.createClass({
   },
 
   render: function() {
-    var classes = [
-      'header'
+    var wrapperClasses = [
+      'header',
     ];
     return (
       <header
-        className={classes.join(' ')}
+        className={wrapperClasses.join(' ')}
       >
         <div className="header--container">
           <Link
@@ -41,7 +42,7 @@ var Header = React.createClass({
             className="header--logo"
           >
             <Icon
-              glyph="gaggle-logo"
+              glyph={this.logoGlyph()}
               className="header--logo_svg"
             />
           </Link>
@@ -52,6 +53,15 @@ var Header = React.createClass({
         </div>
       </header>
     )
+  },
+
+  logoGlyph: function () {
+    var alts = Constants.logoAlts;
+    var location = window.location.pathname.substr(1).split('/')[0];
+
+    return (alts.hasOwnProperty(location))
+      ? alts[location]
+      : alts['default'];
   }
 });
 module.exports = Header;
