@@ -1,11 +1,10 @@
 var React = require("react");
 var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
-var KeyMaster = require("keymaster");
 var Constants = require("../constants.jsx");
 
-var ViewWelcome = React.createClass({
-  displayName: 'ViewWelcome',
+var ViewIOS = React.createClass({
+  displayName: 'ViewIOS',
   //---------------------------------------------------
   // React Lifecycle/Defaults
   //--
@@ -34,18 +33,14 @@ var ViewWelcome = React.createClass({
   //--
   render: function() {
     return (
-      <div className="view view-welcome">
+      <div className="view view-ios_splash">
         <div className="view--content">
-          <h2 className="view--title">Welcome!</h2>
-          <p>Gaggle is a fun way to learn about collective nouns.</p>
-
-          <h3>Get the iOS app!</h3>
+          <h2 className="view--title">iOS App!</h2>
           <p>
             Take pictures and make your own collective nouns with the&nbsp;
             <Link
               to={Constants.iosLink}
-            >iOs app</Link>
-          </p>
+            >ios app</Link></p>
         </div>
       </div>
     );
@@ -56,4 +51,5 @@ var ViewWelcome = React.createClass({
   //--
 
 });
-module.exports = ViewWelcome;
+
+module.exports = ViewIOS;

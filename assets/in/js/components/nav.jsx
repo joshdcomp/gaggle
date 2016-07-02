@@ -46,6 +46,10 @@ var Nav = React.createClass({
         <li className={this.itemClasses('submit')}>
           <Link to="/submit" className="nav--link">Submit</Link>
         </li>
+
+        <li className={this.itemClasses('ios')}>
+          <Link to="/ios" className="nav--link">iOS!</Link>
+        </li>
       </ul>
     )
   },
