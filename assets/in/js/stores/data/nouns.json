@@ -278,5 +278,6 @@
     "clew": ["worms"],
     "clat": ["worms"],
     "zeal": ["zebras"],
-    "cohorts": ["zebras"]
+    "cohorts": ["zebras"],
+    "repository": ["developers"]
 }

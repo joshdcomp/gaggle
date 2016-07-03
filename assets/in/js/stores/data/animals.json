@@ -341,6 +341,7 @@
     "worms" : ["bed", "clew", "bunch", "clat"],
 
 
-    "zebras" : ["herd", "zeal", "cohorts"]
-
+    "zebras" : ["herd", "zeal", "cohorts"],
+    "developers" : ["repository", "merge conflict"],
+    "neckbeards" : ["actually", "fedora", "dwelling"]
 }
