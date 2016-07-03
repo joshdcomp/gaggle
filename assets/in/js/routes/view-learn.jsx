@@ -5,6 +5,7 @@ var AnimalStore = require("../stores/AnimalStore.js");
 var IllustrationStore = require('../stores/IllustrationStore.js');
 var NounStore = require('../stores/NounStore.js');
 var KeyMaster = require("keymaster");
+var Icon = require('../components/_icon.jsx');
 
 var ViewLearn = React.createClass({
   displayName: 'ViewLearn',
@@ -90,42 +91,11 @@ var ViewLearn = React.createClass({
       'view--factoid',
       'factoid',
     ];
+
     var $pic = '';
 
     if ( this.props.params.pic || IllustrationStore.get(this.props.params.animal, this.props.params.noun) ) {
-      /**
-       * Expected object for a pic from the illustration store:
-       * {
-       *   "src": "/assets/out/geese-gaggle-1.svg",
-       *   "alt": "",
-       *   "title": "",
-       *   "artist": {
-       *     "name": "Gabe Cooper",
-       *     "site": "http://www.gabecooper.com/",
-       *     "instagram": "https://www.instagram.com/gabeorlacooper/"
-       *   }
-       * }
-       */
-      var pic = IllustrationStore.get(this.props.params.animal, this.props.params.noun);
-      console.log(pic);
-
-      var alt = (pic.hasOwnProperty('alt'))
-        ? pic.alt
-        : ['A ', this.props.params.noun, ' of ', this.props.params.animal, ' by ', pic.artist.name];
-
-      var title = (pic.hasOwnProperty('title'))
-        ? pic.title
-        : ['A ', this.props.params.noun, ' of ', this.props.params.animal, ' by ', pic.artist.name];
-
-      $pic = (
-        <img
-          className="factoid--img"
-          src={pic.src}
-          alt={alt}
-          title={title}
-        />
-      );
-
+      $pic = this.renderIllustration();
       classes.push('factoid-has_pic')
     }
 
@@ -134,7 +104,6 @@ var ViewLearn = React.createClass({
         <p className="factoid--fact">
           A group of <strong>{this.props.params.animal}</strong> is called {this.aAn(this.props.params.noun||'')} <strong>{this.props.params.noun}</strong>.
         </p>
-
         {$pic}
       </div>
     );
@@ -149,6 +118,99 @@ var ViewLearn = React.createClass({
         >Another!</Link>
       </div>
     );
+  },
+
+  renderIllustration: function () {
+    /**
+     * Expected object for a pic from the illustration store:
+     * {
+     *   "src": "/assets/out/geese-gaggle-1.svg",
+     *   "alt": "",
+     *   "title": "",
+     *   "artist": {
+     *     "name": "Gabe Cooper",
+     *     "site": "http://www.gabecooper.com/",
+     *     "instagram": "https://www.instagram.com/gabeorlacooper/"
+     *   }
+     * }
+     */
+    var pic = IllustrationStore.get(this.props.params.animal, this.props.params.noun),
+        $pic = '';
+    console.log(pic);
+
+    var alt = (pic.hasOwnProperty('alt'))
+      ? pic.alt
+      : ['A ', this.props.params.noun, ' of ', this.props.params.animal, ' by ', pic.artist.name];
+
+    var title = (pic.hasOwnProperty('title'))
+      ? pic.title
+      : ['A ', this.props.params.noun, ' of ', this.props.params.animal, ' by ', pic.artist.name];
+
+    var $ig = (pic.artist.hasOwnProperty('instagram')),
+        $fb = (pic.artist.hasOwnProperty('facebook')),
+        $tw = (pic.artist.hasOwnProperty('twitter'));
+
+    if ($ig) {
+      $ig = (
+        <li className="factoid--illustration_credits_social_item">
+          <Link to={pic.artist.instagram}>
+            <Icon
+              glyph="social-instagram"
+              className="factoid--illustration_credits_social_icon"
+            />
+          </Link>
+        </li>
+      );
+    }
+
+    if ($fb) {
+      $fb = (
+        <li className="factoid--illustration_credits_social_item">
+          <Link to={pic.artist.facebook}>
+            <Icon
+              glyph="social-facebook"
+              className="factoid--illustration_credits_social_icon"
+            />
+          </Link>
+        </li>
+      );
+    }
+
+    if ($tw) {
+      $tw = (
+        <li className="factoid--illustration_credits_social_item">
+          <Link to={pic.artist.twitter}>
+            <Icon
+              glyph="social-twitter"
+              className="factoid--illustration_credits_social_icon"
+            />
+          </Link>
+        </li>
+      );
+    }
+
+    $pic = (
+      <div
+        className="factoid--illustration"
+      >
+        <img
+          className="factoid--img"
+          src={pic.src}
+          alt={alt}
+          title={title}
+        />
+        <div className="factoid--illustration_credits">
+          <p>By: <Link to={pic.artist.site}>{pic.artist.name}</Link></p>
+          <ul className="factoid--illustration_credits_social_list">
+            {$fb}
+            {$tw}
+            {$ig}
+          </ul>
+        </div>
+      </div>
+    );
+
+    return $pic;
   },
   //---------------------------------------------------
   // Consumer-defined functions
