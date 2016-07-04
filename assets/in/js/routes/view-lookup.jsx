@@ -91,7 +91,7 @@ var ViewLookup = React.createClass({
   //--
   queryUpdate: function(e) {
     var val = e.target.value;
-    var query = val || ' '
+    var query = val || ' ';
     var results = AnimalStore.get(query) || [];
 
     if (results.length > 0) {

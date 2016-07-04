@@ -12,7 +12,7 @@ AnimalStore.get = function(animal) {
   var result = null;
 
   if ( animal ) {
-    result = this.collection[animal];
+    result = this.collection[animal.toLowerCase()];
   }
   else {
     result = this.collection;
@@ -22,7 +22,7 @@ AnimalStore.get = function(animal) {
 
 AnimalStore.getRand = function(animal) {
   if (animal) {
-    var nouns = AnimalStore.collection[animal];
+    var nouns = AnimalStore.collection[animal.toLowerCase()];
     return nouns[Math.floor(Math.random() * nouns.length)];
   }
   else {
