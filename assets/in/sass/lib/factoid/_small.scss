@@ -1,17 +1,15 @@
 //All styles pertaining to the `small` breakpoint, usually font-size and dimensions
-@media screen and (min-width: $_mq-s){
+@media screen and (max-width: $_mq-m){
   #{$s-factoid} {
-    // &--fact {
-    //   text-align: center;
-    // }
-    //
-    // &--illustration {
-    //   clear: both;
-    //   float: none;
-    //   margin-top: -80px;
-    //   margin-bottom: 80px;
-    //   width: 100%;
-    //   text-align: center;
-    // }
+    &--fact {
+      text-align: center;
+    }
+
+    &--illustration {
+      margin-top: -50px;
+      margin-bottom: 80px;
+      width: 100%;
+      text-align: center;
+    }
   }
 }

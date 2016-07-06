@@ -42,9 +42,9 @@ var ViewWelcome = React.createClass({
           <h3>Get the iOS app!</h3>
           <p>
             Take pictures and make your own collective nouns with the&nbsp;
-            <Link
-              to={Constants.iosLink}
-            >iOs app</Link>
+            <a
+              href={Constants.iosLink}
+            >iOs app</a>
           </p>
         </div>
       </div>

@@ -36,7 +36,7 @@ var Footer = React.createClass({
       <footer
         className={classes.join(' ')}
       >
-        <p className="footer--legal">Copyright (c) 2015 Josh Compton. All Rights Reserved.</p>
+        <p className="footer--legal">Copyright (c) {new Date().getFullYear()} Josh Compton. All Rights Reserved.</p>
       </footer>
     )
   }

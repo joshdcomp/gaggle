@@ -32,7 +32,8 @@ var ViewSubmit = React.createClass({
     return (
       <div className="view view-submit">
         <div className="view--content">
-          <p>We're really so happy you're interested in Gaggle and want to contribute.</p>
+          <h1>Coming soon&hellip;</h1>
+          <p>We're really so happy you're interested in Gaggle and want to contribute. This bit's still under construction, check back soon!</p>
           {$idea}
           <p>Hit up Josh at <a href="https://twitter.com/joshdcom">@joshdcomp</a> with noun ideas or images, PM's open!</p>
         </div>

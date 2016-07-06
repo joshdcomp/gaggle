@@ -153,12 +153,12 @@ var ViewLearn = React.createClass({
     if ($ig) {
       $ig = (
         <li className="factoid--illustration_credits_social_item">
-          <Link to={pic.artist.instagram}>
+          <a href={pic.artist.instagram}>
             <Icon
               glyph="social-instagram"
               className="factoid--illustration_credits_social_icon"
             />
-          </Link>
+          </a>
         </li>
       );
     }
@@ -166,12 +166,12 @@ var ViewLearn = React.createClass({
     if ($fb) {
       $fb = (
         <li className="factoid--illustration_credits_social_item">
-          <Link to={pic.artist.facebook}>
+          <a href={pic.artist.facebook}>
             <Icon
               glyph="social-facebook"
               className="factoid--illustration_credits_social_icon"
             />
-          </Link>
+          </a>
         </li>
       );
     }
@@ -179,12 +179,12 @@ var ViewLearn = React.createClass({
     if ($tw) {
       $tw = (
         <li className="factoid--illustration_credits_social_item">
-          <Link to={pic.artist.twitter}>
+          <a href={pic.artist.twitter}>
             <Icon
               glyph="social-twitter"
               className="factoid--illustration_credits_social_icon"
             />
-          </Link>
+          </a>
         </li>
       );
     }
@@ -200,7 +200,7 @@ var ViewLearn = React.createClass({
           title={title}
         />
         <div className="factoid--illustration_credits">
-          <p>By: <Link to={pic.artist.site}>{pic.artist.name}</Link></p>
+          <p>By: <a href={pic.artist.site}>{pic.artist.name}</a></p>
           <ul className="factoid--illustration_credits_social_list">
             {$fb}
             {$tw}
