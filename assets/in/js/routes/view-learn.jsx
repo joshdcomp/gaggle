@@ -6,6 +6,7 @@ var IllustrationStore = require('../stores/IllustrationStore.js');
 var NounStore = require('../stores/NounStore.js');
 var KeyMaster = require("keymaster");
 var Icon = require('../components/_icon.jsx');
+var Constants = require("../constants.jsx");
 
 var ViewLearn = React.createClass({
   displayName: 'ViewLearn',
@@ -77,6 +78,33 @@ var ViewLearn = React.createClass({
       <div className="view view-learn" onKeyUp={this.handleKeyUp}>
         <div className="view--content">
           <h2 className="view--title">Did you know...</h2>
+          <div className="view--share_wrapper">
+            <p>Share on:</p>
+            <ul className="view--share_list">
+              <li className="view--share_item">
+                <a
+                  href={window.location.href}
+                  onClick={this.handleTWShare}
+                >
+                  <Icon
+                    glyph="social-twitter"
+                    className="factoid--illustration_credits_social_icon"
+                  />
+                </a>
+              </li>
+              <li className="view--share_item">
+                <a
+                  href={window.location.href}
+                  onClick={this.handleFBShare}
+                >
+                  <Icon
+                    glyph="social-facebook"
+                    className="factoid--illustration_credits_social_icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
 
           {this.renderFactoid()}
 
@@ -136,7 +164,6 @@ var ViewLearn = React.createClass({
      */
     var pic = IllustrationStore.get(this.props.params.animal, this.props.params.noun),
         $pic = '';
-    console.log(pic);
 
     var alt = (pic.hasOwnProperty('alt'))
       ? pic.alt
@@ -239,10 +266,60 @@ var ViewLearn = React.createClass({
   },
 
   handleKeyUp: function(e, props) {
-    if (props.key === 'space') {
+    if (props && props.key === 'space') {
       e.preventDefault();
       this.context.router.push( this.getNextRoute() );
     }
+  },
+
+  handleFBShare: function (e) {
+    e.preventDefault();
+    var text = [
+      'A group of',
+      this.props.params.animal,
+      'is called',
+      this.aAn(this.props.params.noun||''),
+      this.props.params.noun,
+      '😂😂'
+    ].join(' ');
+    var fb_link = ['http://www.facebook.com/sharer.php?s=100&',
+      'p[title]=', encodeURIComponent(Constants.tagline),
+      '&p[summary]=', encodeURIComponent(text),
+      '&p[url]=', encodeURIComponent(e.currentTarget.href)
+    ].join('')
+
+    //Trigger a new window with the Facebook dialogue
+    window.open(
+      fb_link,
+      'facebookwindow',
+      'height=300, width=550, top='+(window.innerHeight/2 - 225) +', left='+window.innerWidth/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0'
+    );
+  },
+
+  handleTWShare: function (e) {
+    e.preventDefault();
+
+    var loc = e.currentTarget.href;
+    //Get the title of the link (which is our tweet...clever huh?)
+    var text = [
+      'A group of',
+      this.props.params.animal,
+      'is called',
+      this.aAn(this.props.params.noun||''),
+      this.props.params.noun,
+      '😂😂',
+      Constants.hashTag,
+      loc
+    ].join(' ');
+
+    var tweet  = encodeURIComponent(text);
+    var twitter_link = 'http://twitter.com/share?url=' + tweet + '&text=' + tweet;
+    //Trigger a new window with the Twitter dialog, in the middle of the page
+    window.open(
+      twitter_link,
+      'twitterwindow',
+      'height=300, width=550, top='+(window.innerHeight/2 - 225) +', left='+window.innerWidth/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0'
+    );
   },
 });
 module.exports = ViewLearn;
