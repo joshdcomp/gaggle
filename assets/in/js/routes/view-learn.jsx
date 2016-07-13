@@ -78,17 +78,21 @@ var ViewLearn = React.createClass({
       <div className="view view-learn" onKeyUp={this.handleKeyUp}>
         <div className="view--content">
           <h2 className="view--title">Did you know...</h2>
+
+          {this.renderFactoid()}
+
           <div className="view--share_wrapper">
-            <p>Share on:</p>
+            <p className="view--share_intro">Share on:</p>
             <ul className="view--share_list">
               <li className="view--share_item">
                 <a
                   href={window.location.href}
                   onClick={this.handleTWShare}
+                  className="view--share_link"
                 >
                   <Icon
                     glyph="social-twitter"
-                    className="factoid--illustration_credits_social_icon"
+                    className="factoid--illustration_credits_social_icon view--share_icon"
                   />
                 </a>
               </li>
@@ -96,17 +100,16 @@ var ViewLearn = React.createClass({
                 <a
                   href={window.location.href}
                   onClick={this.handleFBShare}
+                  className="view--share_link"
                 >
                   <Icon
                     glyph="social-facebook"
-                    className="factoid--illustration_credits_social_icon"
+                    className="factoid--illustration_credits_social_icon view--share_icon"
                   />
                 </a>
               </li>
             </ul>
           </div>
-
-          {this.renderFactoid()}
 
           {this.renderNextLink()}
         </div>
