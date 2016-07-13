@@ -52,4 +52,35 @@
       line-height: 1.5;
     }
   }
+
+  &--share_wrapper {
+      display: inline-block;
+  }
+
+  &--share_intro {
+      display: inline-block;
+      margin-right: 10px;
+  }
+
+  &--share_list {
+      display: inline-block;
+  }
+
+  &--share_item {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      vertical-align: middle;
+  }
+
+  &--share_link {
+    display: block;
+    height: 100%;
+  }
+
+  &--share_icon {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
