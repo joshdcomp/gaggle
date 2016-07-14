@@ -95,7 +95,7 @@ var ViewWelcome = React.createClass({
               Take pictures and make your own collective nouns with the&nbsp;
               <a
                 href={Constants.ios.link}
-              >iOs app</a>
+              >iOS app</a>
             </p>
           </div>
           <div className="scaffold scaffold--one_half">
