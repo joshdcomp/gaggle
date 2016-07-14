@@ -8,7 +8,7 @@ module.exports = {
   title: 'Gaggle',
   tagline: 'Gaggle [gag-uh l] : n. a fun way to learn about collective nouns',
   hashTag: '#gaggleClub',
-  blogPost: 'https://medium.com/@joshdcomp/3eac99d12732',
+  blogPost: 'https://medium.com/@joshdcomp/building-a-gaggle-3eac99d12732#.fmbaujxzy',
   ios: {
     features: [
       'Use your camera to take a picture of a group of something and name it',
