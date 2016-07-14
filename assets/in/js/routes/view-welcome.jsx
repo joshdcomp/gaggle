@@ -70,7 +70,7 @@ var ViewWelcome = React.createClass({
               </li>
 
               <li>
-                <Link to={Constants.ios.link}><strong className="bg_color--ios">Install the iOS app!</strong></Link>
+                <a href={Constants.ios.link}><strong className="bg_color--ios">Install the iOS app!</strong></a>
               </li>
             </ul>
           </div>
