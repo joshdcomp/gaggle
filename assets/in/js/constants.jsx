@@ -16,7 +16,7 @@ module.exports = {
       'See collective nouns other users have made up'
     ],
     pic: {
-      src: '/assets/out/img/gaggle-ios-1.png',
+      src: '//joshdcompton.com/gaggle-ios-1.png',
       alt: 'Tap the image to see the noun',
       title: 'Tap the image to see the noun',
     },
