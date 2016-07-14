@@ -35,12 +35,28 @@ var ViewIOS = React.createClass({
     return (
       <div className="view view-ios_splash">
         <div className="view--content">
-          <h2 className="view--title">iOS App!</h2>
-          <p>
-            Take pictures and make your own collective nouns with the&nbsp;
-            <Link
-              to={Constants.iosLink}
-            >ios app</Link></p>
+          <div className="scaffold scaffold--one_half">
+            <h2>More about the iOS app:</h2>
+              <ul className="yes_list">
+                {Constants.ios.features.map(function (feature, i) {
+                  return (<li key={i}>{feature}</li>);
+                }.bind(this))}
+              </ul>
+            <p>
+              Take pictures and make your own collective nouns with the&nbsp;
+              <a
+                href={Constants.ios.link}
+              >iOs app</a>
+            </p>
+          </div>
+          <div className="scaffold scaffold--one_half">
+            <img
+              className="factoid--img"
+              src={Constants.ios.pic.src}
+              alt={Constants.ios.pic.alt}
+              title={Constants.ios.pic.title}
+            />
+          </div>
         </div>
       </div>
     );

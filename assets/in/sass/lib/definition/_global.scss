@@ -1,0 +1,19 @@
+// Global styles across all screen sizes, usually stuff like colors and typography
+#{$s-definition} {
+  border: solid thin $c-definition-border;
+  background-color: $c-definition-bg;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: block;
+  line-height: 1.5;
+  margin-bottom: 15px;
+
+  &--term {
+    font-family: $t-definition-term-ff;
+    font-family: $t-definition-term-fw;
+  }
+
+  &--taxonomy {
+    font-style: italic;
+  }
+}

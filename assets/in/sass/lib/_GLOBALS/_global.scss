@@ -169,3 +169,45 @@ a {
     margin-left: 0px;
     padding-left: 0px;
 }
+
+.yes_list {
+  list-style: disc;
+  margin-left: 10px;
+  padding-left: 10px;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+/*hax, will flesh this out more later*/
+.bg_color {
+
+  &--learn {
+    padding: 2px 5px;
+    color: white;
+    background-color: $c-learn;
+  }
+
+  &--lookup {
+    padding: 2px 5px;
+    color: white;
+    background-color: $c-lookup;
+  }
+
+  &--submit {
+    padding: 2px 5px;
+    color: white;
+    background-color: $c-submit;
+  }
+
+  &--ios {
+    padding: 2px 5px;
+    color: white;
+    background-color: $c-ios;
+  }
+}
+
+.padding-top-large {
+  padding-top: 100px;
+}
