@@ -1,4 +1,26 @@
 //All styles pertaining to the `small` breakpoint, usually font-size and dimensions
 @media screen and (min-width: $_mq-s){
+  #{$s-scaffold} {
+    display: block;
+    vertical-align: top;
+
+    &--one_third {
+      width: auto;
+      padding-left: $d-scaffold-gutter;
+      padding-right: $d-scaffold-gutter;
+    }
+
+    &--two_thirds {
+      width: auto;
+      padding-left: $d-scaffold-gutter;
+      padding-right: $d-scaffold-gutter;
+    }
+
+    &--one_half {
+      width: auto;
+      padding-left: $d-scaffold-gutter;
+      padding-right: $d-scaffold-gutter;
+    }
+  }
 
 }
