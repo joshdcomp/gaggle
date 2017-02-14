@@ -6,6 +6,7 @@
     Josh Compton -- ui designer, webapp dev -- @joshdcomp
     Matt Bush    -- iOS app developer       -- @mtthwbsh
     Gabe Cooper  -- illustrator             -- @gabeorlacooper
+    Tammi        -- student                 -- @tn283
 
 # THANKS
 
